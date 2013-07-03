@@ -9,6 +9,7 @@ define([
     , className: "tab-pane"
     , initialize: function() {
       this.id = this.options.title.toLowerCase().replace(/\W/g,'');
+      this.extra = this.options.extra;
       this.tabNavTemplate = _.template(_tabNavTemplate);
       this.render();
     }

@@ -1,46 +1,43 @@
 body {
-  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  padding-top: 60px;
+  /* 60px to make the container go all the way to the bottom of the topbar */
+
   padding-bottom: 10px;
   position: relative;
 }
-
 @media (max-width: 979px) {
   body {
     padding-top: 0px;
   }
 }
-
 #components {
   min-height: 500px;
 }
-
 #target fieldset {
   border: 1px solid #ccc;
   min-height: 200px;
   padding: 5px;
   padding-bottom: 30px;
 }
-
 .component {
   cursor: pointer;
 }
-
 input {
   cursor: pointer;
 }
-
 textarea {
   resize: vertical;
 }
-
+.popover {
+  z-index: 2000;
+}
 .popover .control-group {
   cursor: default;
 }
 .popover input {
   cursor: text;
 }
-
-.temp{
+.temp {
   width: 100%;
   height: 100%;
   background: transparent;
@@ -50,7 +47,6 @@ textarea {
   overflow-x: hidden;
   left: 0;
 }
-
 .temp form {
   padding: 8px 4px;
   border: 1px dotted #ccc;
@@ -60,51 +56,255 @@ textarea {
   -webkit-transition: -webkit-transform 0.1s ease-out;
   overflow: hidden;
 }
-
-#render{
+#render {
   min-height: 500px;
   font-family: monospace;
 }
-
 /* Popovers now are appended to their parent rather
 than to the body/main document as they once were.
 We need to over-ride some inherited stuff.. */
 form .popover .controls {
-  margin-left: 0;
+  margin-left: 0 !important;
 }
-
 form .popover .control-label {
   text-align: left;
 }
-
 form .popover form {
   width: 224px;
 }
-
-.popover-content form .btn{
-  margin-right: 10px
+.popover-content form .btn {
+  margin-right: 10px;
 }
-
-.target:after{
-  float:left;
+.target:after {
+  float: left;
   content: " ";
-  height: 77px; 
+  height: 77px;
   margin-top: 3px;
   background: #f0f0f0;
   width: 100%;
   border: 1px dashed #ccc;
 }
-
-#target, #input, #radioscheckboxes, #select, #buttons {
- -webkit-touch-callout: none;
- -webkit-user-select: none;
- -khtml-user-select: none;
- -moz-user-select: none;
- -ms-user-select: none;
- user-select: none;
+#target,
+#input,
+#radioscheckboxes,
+#select,
+#buttons {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+#target fieldset {
+  width: 100%;
+  overflow: hidden;
+}
+#build {
+  font-family: 'Lucida Sans', sans-serif;
+  font-size: 1em;
+  /* @group Overriding NAU Styles */
 
-#target fieldset{
- width: 100%;
- overflow: hidden;
+  /* @end */
+
+}
+#build div {
+  margin-top: 0px !important;
+}
+#build .form-horizontal select {
+  width: 80% !important;
+}
+#build .access-hide {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  overflow: hidden;
+  height: 0px;
+  margin-bottom: 0px;
+}
+#build legend {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#build fieldset {
+  margin-bottom: 0px;
+}
+#build h3 {
+  color: #695f5e;
+  line-height: 20px;
+}
+#build h4 {
+  color: #695f5e;
+}
+#build p.header-sub {
+  margin-top: -10px;
+}
+#build .space {
+  padding: 10px;
+}
+#build button[type=submit] {
+  margin-top: 10px;
+}
+#build .form-horizontal textarea,
+#build .form-horizontal select,
+#build .form-horizontal input[type="text"],
+#build .form-horizontal input[type="password"],
+#build .form-horizontal input[type="datetime"],
+#build .form-horizontal input[type="datetime-local"],
+#build .form-horizontal input[type="date"],
+#build .form-horizontal input[type="month"],
+#build .form-horizontal input[type="time"],
+#build .form-horizontal input[type="week"],
+#build .form-horizontal input[type="number"],
+#build .form-horizontal input[type="email"],
+#build .form-horizontal input[type="url"],
+#build .form-horizontal input[type="search"],
+#build .form-horizontal input[type="tel"],
+#build .form-horizontal input[type="color"],
+#build .form-horizontal .uneditable-input {
+  width: 80%;
+}
+#build .form-horizontal .control-group {
+  margin-bottom: 10px;
+}
+#build .form-horizontal .control-label {
+  width: 140px;
+}
+#build .form-horizontal .controls {
+  margin-left: 160px;
+}
+#build .form-horizontal .help-block {
+  font-size: .88em;
+  margin: 0px 0px 0px 5px !important;
+}
+#build .form-inline .controls-row [class*="span"] textarea,
+#build .form-inline .controls-row [class*="span"] select,
+#build .form-inline .controls-row [class*="span"] input[type="text"],
+#build .form-inline .controls-row [class*="span"] input[type="password"],
+#build .form-inline .controls-row [class*="span"] input[type="datetime"],
+#build .form-inline .controls-row [class*="span"] input[type="datetime-local"],
+#build .form-inline .controls-row [class*="span"] input[type="date"],
+#build .form-inline .controls-row [class*="span"] input[type="month"],
+#build .form-inline .controls-row [class*="span"] input[type="time"],
+#build .form-inline .controls-row [class*="span"] input[type="week"],
+#build .form-inline .controls-row [class*="span"] input[type="number"],
+#build .form-inline .controls-row [class*="span"] input[type="email"],
+#build .form-inline .controls-row [class*="span"] input[type="url"],
+#build .form-inline .controls-row [class*="span"] input[type="search"],
+#build .form-inline .controls-row [class*="span"] input[type="tel"],
+#build .form-inline .controls-row [class*="span"] input[type="color"],
+#build .form-inline .controls-row [class*="span"] .uneditable-input {
+  width: 100%;
+  *width: 99.94680851063829%;
+  display: inline-block;
+  float: left;
+  margin-left: 0px;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 30px;
+}
+#build .form-inline .columns-span4 {
+  width: 31.914893617021278%;
+  *width: 31.861702127659576%;
+}
+#build .form-inline .columns-span3 {
+  width: 23.404255319148934%;
+  *width: 23.351063829787233%;
+}
+#build .form-inline .controls-row {
+  margin-bottom: 10px;
+}
+#build .form-inline .controls-row .checkbox.span4,
+#build .form-inline .controls-row .radio.span4 {
+  width: 31.914893617021278%;
+  *width: 31.861702127659576%;
+  margin-left: 1% !important;
+}
+#build .form-inline .controls-row .checkbox.span3,
+#build .form-inline .controls-row .radio.span3 {
+  width: 23.404255319148934%;
+  *width: 23.351063829787233%;
+  margin-left: 1% !important;
+}
+#build .form-inline textarea,
+#build .form-inline select,
+#build .form-inline input[type="text"],
+#build .form-inline input[type="password"],
+#build .form-inline input[type="datetime"],
+#build .form-inline input[type="datetime-local"],
+#build .form-inline input[type="date"],
+#build .form-inline input[type="month"],
+#build .form-inline input[type="time"],
+#build .form-inline input[type="week"],
+#build .form-inline input[type="number"],
+#build .form-inline input[type="email"],
+#build .form-inline input[type="url"],
+#build .form-inline input[type="search"],
+#build .form-inline input[type="tel"],
+#build .form-inline input[type="color"],
+#build .form-inline .uneditable-input {
+  margin-bottom: 0px;
+}
+#build .form-inline .help-block {
+  font-size: .88em;
+  margin: -10px 0px 0px 5px;
+}
+@media (max-width: 767px) {
+  #build .form-inline textarea,
+  #build .form-inline select,
+  #build .form-inline input[type="text"],
+  #build .form-inline input[type="password"],
+  #build .form-inline input[type="datetime"],
+  #build .form-inline input[type="datetime-local"],
+  #build .form-inline input[type="date"],
+  #build .form-inline input[type="month"],
+  #build .form-inline input[type="time"],
+  #build .form-inline input[type="week"],
+  #build .form-inline input[type="number"],
+  #build .form-inline input[type="email"],
+  #build .form-inline input[type="url"],
+  #build .form-inline input[type="search"],
+  #build .form-inline input[type="tel"],
+  #build .form-inline input[type="color"],
+  #build .form-inline .uneditable-input {
+    margin-bottom: 10px;
+    margin-left: 0% !important;
+  }
+  #build .form-inline .controls-row {
+    margin-bottom: 0px;
+  }
+  #build .form-inline .controls-row [class*="span"] + [class*="span"] {
+    margin-left: 0% !important;
+  }
+  #build .form-inline .help-block {
+    font-size: .88em;
+    margin: 0px 0px 10px 0px;
+  }
+}
+@media (max-width: 480px) {
+  #build {
+    margin: 50px 0px 0px 0px;
+    width: 100% !important;
+  }
+  #build textarea,
+  #build select,
+  #build input[type="text"],
+  #build input[type="password"],
+  #build input[type="datetime"],
+  #build input[type="datetime-local"],
+  #build input[type="date"],
+  #build input[type="month"],
+  #build input[type="time"],
+  #build input[type="week"],
+  #build input[type="number"],
+  #build input[type="email"],
+  #build input[type="url"],
+  #build input[type="search"],
+  #build input[type="tel"],
+  #build input[type="color"],
+  #build .uneditable-input {
+    width: 95% !important;
+  }
 }

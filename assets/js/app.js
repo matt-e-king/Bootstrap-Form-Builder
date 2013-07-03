@@ -2,13 +2,13 @@ define([
        "jquery" , "underscore" , "backbone"
        , "collections/snippets" , "collections/my-form-snippets"
        , "views/tab" , "views/my-form"
-       , "text!data/input.json", "text!data/radio.json", "text!data/select.json", "text!data/buttons.json"
+       , "text!data/fields.json", "text!data/formatting.json","text!data/buttons.json"
        , "text!templates/app/render.html",  "text!templates/app/about.html", 
 ], function(
   $, _, Backbone
   , SnippetsCollection, MyFormSnippetsCollection
   , TabView, MyFormView
-  , inputJSON, radioJSON, selectJSON, buttonsJSON
+  , fieldsJSON, formattingJSON, buttonsJSON
   , renderTab, aboutTab
 ){
   return {
@@ -16,6 +16,14 @@ define([
 
       //Bootstrap tabs from json.
       new TabView({
+        title: "Fields"
+        , collection: new SnippetsCollection(JSON.parse(fieldsJSON))
+      });
+       new TabView({
+        title: "Formatting"
+        , collection: new SnippetsCollection(JSON.parse(formattingJSON))
+      });
+      /*new TabView({
         title: "Input"
         , collection: new SnippetsCollection(JSON.parse(inputJSON))
       });
@@ -26,7 +34,7 @@ define([
       new TabView({
         title: "Select"
         , collection: new SnippetsCollection(JSON.parse(selectJSON))
-      });
+      });*/
       new TabView({
         title: "Buttons"
         , collection: new SnippetsCollection(JSON.parse(buttonsJSON))
@@ -35,10 +43,10 @@ define([
         title: "Rendered"
         , content: renderTab
       });
-      new TabView({
+      /*new TabView({
         title: "About"
         , content: aboutTab
-      });
+      });*/
 
 
       //Make the first tab active!

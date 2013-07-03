@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Paragraph",
+    "fields": {
+      "id": {
+        "label": "Content",
+        "type": "textarea",
+        "value": "Drap and drop this element, and then edit me! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae volutpat tortor. Morbi auctor leo turpis, in vestibulum velit aliquam a. Aenean suscipit ullamcorper turpis a posuere."
+      },
+      "heading": {
+        "label": "Ignore",
+        "type": "input",
+        "value": "Paragraph Element"
+      }
+  	}
+  }
+]

@@ -1,0 +1,378 @@
+body {
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  padding-bottom: 10px;
+  position: relative;
+}
+
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+#components {
+  min-height: 500px;
+}
+
+#target fieldset {
+  border: 1px solid #ccc;
+  min-height: 200px;
+  padding: 5px;
+  padding-bottom: 30px;
+}
+
+.component {
+  cursor: pointer;
+}
+
+input {
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.popover {
+  z-index:2000;
+}
+
+.popover .control-group {
+  cursor: default;
+}
+.popover input {
+  cursor: text;
+}
+
+
+.temp{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  z-index: 999999;
+  top: 0;
+  overflow-x: hidden;
+  left: 0;
+}
+
+.temp form {
+  padding: 8px 4px;
+  border: 1px dotted #ccc;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 30px #999;
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  overflow: hidden;
+}
+
+#render{
+  min-height: 500px;
+  font-family: monospace;
+}
+
+/* Popovers now are appended to their parent rather
+than to the body/main document as they once were.
+We need to over-ride some inherited stuff.. */
+form .popover .controls {
+  margin-left: 0 !important;
+}
+
+form .popover .control-label {
+  text-align: left;
+}
+
+form .popover form {
+  width: 224px;
+}
+
+.popover-content form .btn{
+  margin-right: 10px
+}
+
+.target:after{
+  float:left;
+  content: " ";
+  height: 77px; 
+  margin-top: 3px;
+  background: #f0f0f0;
+  width: 100%;
+  border: 1px dashed #ccc;
+}
+
+#target, #input, #radioscheckboxes, #select, #buttons {
+ -webkit-touch-callout: none;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+}
+
+#target fieldset{
+ width: 100%;
+ overflow: hidden;
+}
+
+
+
+
+
+
+
+#build{
+
+  @dark-grey: #695F5E;
+
+  font-family:'Lucida Sans', sans-serif;
+
+  font-size:1em;
+
+  /* @group Overriding NAU Styles */
+
+  div {
+    margin-top:0px !important;
+  }
+
+  .form-horizontal select {
+    width:80% !important;
+  }
+
+  /* @end */
+
+  .access-hide {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    overflow: hidden;
+    height:0px;
+    margin-bottom:0px;
+  }
+
+  legend {
+    font-weight:bold;
+    margin-bottom:20px;
+  }
+
+  fieldset {
+    margin-bottom:0px;
+  }
+
+  h3 {
+    color:@dark-grey;
+    line-height:20px;
+  }
+
+  h4 {
+    color:@dark-grey;
+  }
+
+  p.header-sub {
+    margin-top:-10px;
+  } 
+
+  .space {
+    padding:10px;
+  }
+
+  button[type=submit] {
+    margin-top:10px;
+  }
+
+  .form-horizontal {
+
+    textarea,
+    select,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input {
+      width:80%;
+    }
+
+    .control-group {
+      margin-bottom:10px;
+    }
+
+    .control-label {
+      width:140px;
+    }
+
+    .controls {
+      margin-left:160px;
+    }
+
+    .help-block {
+      font-size:.88em;
+      margin:0px 0px 0px 5px !important;
+    }
+
+  }
+
+
+  .form-inline {
+
+    .controls-row [class*="span"] {
+
+      textarea,
+      select,
+      input[type="text"],
+      input[type="password"],
+      input[type="datetime"],
+      input[type="datetime-local"],
+      input[type="date"],
+      input[type="month"],
+      input[type="time"],
+      input[type="week"],
+      input[type="number"],
+      input[type="email"],
+      input[type="url"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="color"],
+      .uneditable-input {
+        width: 100%;
+        *width: 99.94680851063829%;
+        display:inline-block;
+        float:left;
+        margin-left:0px;
+        -webkit-box-sizing:border-box;
+        -o-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+        min-height:30px;
+      }
+
+    }
+
+    .columns-span4 {
+      width: 31.914893617021278%;
+      *width: 31.861702127659576%;
+    }
+
+    .columns-span3 {
+      width: 23.404255319148934%;
+        *width: 23.351063829787233%;
+    }
+
+    .controls-row {
+      margin-bottom:10px;
+
+      .checkbox.span4,
+      .radio.span4 {
+        .columns-span4;
+        margin-left:1% !important;
+      }
+
+      .checkbox.span3,
+      .radio.span3 {
+        .columns-span3;
+        margin-left:1% !important;
+      }
+    }
+
+    textarea,
+    select,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input {
+      margin-bottom:0px;
+    }
+
+    .help-block {
+      font-size:.88em;
+      margin:-10px 0px 0px 5px;
+    }
+
+    @media (max-width: 767px) {
+
+      textarea,
+      select,
+      input[type="text"],
+      input[type="password"],
+      input[type="datetime"],
+      input[type="datetime-local"],
+      input[type="date"],
+      input[type="month"],
+      input[type="time"],
+      input[type="week"],
+      input[type="number"],
+      input[type="email"],
+      input[type="url"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="color"],
+      .uneditable-input {
+        margin-bottom:10px;
+        margin-left:0% !important;
+      }
+
+      .controls-row {
+        margin-bottom:0px;
+        [class*="span"] + [class*="span"] {
+          margin-left:0% !important;
+        }
+      }
+
+      .help-block {
+        font-size:.88em;
+        margin:0px 0px 10px 0px;
+      }
+      
+
+    }
+
+
+  }
+
+  @media (max-width: 480px) {
+    margin:50px 0px 0px 0px;
+    width:100% !important;
+
+    textarea,
+    select,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input {
+      width:95% !important;
+    }
+  }
+
+}
+
+
