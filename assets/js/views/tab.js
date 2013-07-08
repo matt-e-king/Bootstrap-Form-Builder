@@ -8,8 +8,8 @@ define([
     tagName: "div"
     , className: "tab-pane"
     , initialize: function() {
+      //pulling in the title attribute from app.js new TabView call
       this.id = this.options.title.toLowerCase().replace(/\W/g,'');
-      this.extra = this.options.extra;
       this.tabNavTemplate = _.template(_tabNavTemplate);
       this.render();
     }
