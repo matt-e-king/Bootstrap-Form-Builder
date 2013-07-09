@@ -12,29 +12,19 @@ define([
   , renderTab, aboutTab
 ){
   return {
+    //this is the initialize function which is triggered from the main.js file
     initialize: function(){
 
       //Bootstrap tabs from json.
+      //new a new TabView which is loading the file "views/tab.js"
       new TabView({
-        title: "Fields"
-        , collection: new SnippetsCollection(JSON.parse(fieldsJSON))
+        title: "Fielding" //sets the title of the tab in the HTML
+        , collection: new SnippetsCollection(JSON.parse(fieldsJSON)) //this is calling the colleciton file snippets.js
       });
        new TabView({
         title: "Formatting"
         , collection: new SnippetsCollection(JSON.parse(formattingJSON))
       });
-      /*new TabView({
-        title: "Input"
-        , collection: new SnippetsCollection(JSON.parse(inputJSON))
-      });
-      new TabView({
-        title: "Radios / Checkboxes"
-        , collection: new SnippetsCollection(JSON.parse(radioJSON))
-      });
-      new TabView({
-        title: "Select"
-        , collection: new SnippetsCollection(JSON.parse(selectJSON))
-      });*/
       new TabView({
         title: "Buttons"
         , collection: new SnippetsCollection(JSON.parse(buttonsJSON))
