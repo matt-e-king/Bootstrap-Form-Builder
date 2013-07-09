@@ -7,6 +7,7 @@ define([
   SnippetView, TempSnippetView,
   PubSub
 ){
+  //this whole view is extended from the file views/snippet
   return SnippetView.extend({
     events:{
       "click"   : "preventPropagation" //stops checkbox / radio reacting.

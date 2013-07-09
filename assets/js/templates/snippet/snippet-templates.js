@@ -20,6 +20,9 @@ define(function(require) {
   , searchinput              = require('text!templates/snippet/searchinput.html')
   , selectbasic              = require('text!templates/snippet/selectbasic.html')
   , selectmultiple           = require('text!templates/snippet/selectmultiple.html')
+  , space                    = require('text!templates/snippet/space.html')
+  , subheading               = require('text!templates/snippet/subheading.html')
+  , subheadingwithparagraph  = require('text!templates/snippet/subheadingwithparagraph.html')
   , textarea                 = require('text!templates/snippet/textarea.html')
   , textinput                = require('text!templates/snippet/textinput.html');
 
@@ -45,6 +48,9 @@ define(function(require) {
     , searchinput              : searchinput
     , selectbasic              : selectbasic
     , selectmultiple           : selectmultiple
+    , space                    : space
+    , subheading               : subheading
+    , subheadingwithparagraph  : subheadingwithparagraph
     , textarea                 : textarea
     , textinput                : textinput
   }

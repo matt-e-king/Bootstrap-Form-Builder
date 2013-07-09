@@ -15,6 +15,9 @@ define([
     , idFriendlyTitle: function(){
       return this.get("title").replace(/\W/g,'').toLowerCase();
     }
+    , alternateBuid: function() {
+      return this.get("build");
+    }
     , setField: function(name, value) {
       var fields = this.get("fields")
       fields[name]["value"] = value;

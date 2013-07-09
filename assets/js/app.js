@@ -18,7 +18,7 @@ define([
       //Bootstrap tabs from json.
       //new a new TabView which is loading the file "views/tab.js"
       new TabView({
-        title: "Fielding" //sets the title of the tab in the HTML
+        title: "Fields" //sets the title of the tab in the HTML
         , collection: new SnippetsCollection(JSON.parse(fieldsJSON)) //this is calling the colleciton file snippets.js
       });
        new TabView({

@@ -13,12 +13,17 @@ define([
     model: SnippetModel
     , renderAll: function(){
       return this.map(function(snippet){
-        return new MyFormSnippetView({model: snippet}).render(true);
+        return new MyFormSnippetView({model: snippet}).render("with attributes");
       })
     }
     , renderAllClean: function(){
       return this.map(function(snippet){
-        return new MyFormSnippetView({model: snippet}).render(false);
+        return new MyFormSnippetView({model: snippet}).render("no attributes");
+      });
+    }
+    , renderAllRendered: function(){
+      return this.map(function(snippet){
+        return new MyFormSnippetView({model: snippet}).render("render");
       });
     }
   });

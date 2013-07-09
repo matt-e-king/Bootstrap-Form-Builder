@@ -1,6 +1,7 @@
 [
   {
     "title": "Single Button",
+    "build": true,
     "fields": {
       "id": {
         "label": "ID / Name",
@@ -10,12 +11,12 @@
       "label": {
         "label": "Label Text",
         "type": "input",
-        "value": "Single Button"
+        "value": "Submit Button"
       },
       "buttonlabel": {
         "label": "Button Label",
         "type": "input",
-        "value": "Button"
+        "value": "Submit"
       },
       "buttontype": {
         "label": "Button Type",
@@ -24,12 +25,12 @@
           {
             "value": "btn-default",
             "label": "Default",
-            "selected": false
+            "selected": true
           },
           {
             "value": "btn-primary",
             "label": "Primary",
-            "selected": true
+            "selected": false
           },
           {
             "value": "btn-info",

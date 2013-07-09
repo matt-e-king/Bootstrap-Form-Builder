@@ -20,48 +20,17 @@
       "helptext": {
         "label": "Help Text",
         "type": "input",
-        "value": "help"
+        "value": ""
       },
       "required": {
         "label": "Required",
         "type": "checkbox",
         "value": false
       },
-      "inputsize": {
-        "label": "Input Size",
-        "type": "select",
-        "value": [
-          {
-            "value": "input-mini",
-            "label": "Mini",
-            "selected": false
-          },
-          {
-            "value": "input-small",
-            "label": "Small",
-            "selected": false
-          },
-          {
-            "value": "input-medium",
-            "label": "Medium",
-            "selected": false
-          },
-          {
-            "value": "input-large",
-            "label": "Large",
-            "selected": false
-          },
-          {
-            "value": "input-xlarge",
-            "label": "Xlarge",
-            "selected": true
-          },
-          {
-            "value": "input-xxlarge",
-            "label": "Xxlarge",
-            "selected": false
-          }
-        ]
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -82,6 +51,11 @@
         "label": "Starting Text",
         "type": "textarea",
         "value": "default text"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -105,6 +79,11 @@
           "Option one",
           "Option two"
         ]
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -129,6 +108,11 @@
           2,
           3
         ]
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -152,6 +136,11 @@
           "Option one",
           "Option two"
         ]
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -176,6 +165,11 @@
           2,
           3
         ]
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -200,41 +194,10 @@
           "Option two"
         ]
       },
-      "inputsize": {
-        "label": "Input Size",
-        "type": "select",
-        "value": [
-          {
-            "value": "input-mini",
-            "label": "Mini",
-            "selected": false
-          },
-          {
-            "value": "input-small",
-            "label": "Small",
-            "selected": false
-          },
-          {
-            "value": "input-medium",
-            "label": "Medium",
-            "selected": false
-          },
-          {
-            "value": "input-large",
-            "label": "Large",
-            "selected": false
-          },
-          {
-            "value": "input-xlarge",
-            "label": "Xlarge",
-            "selected": true
-          },
-          {
-            "value": "input-xxlarge",
-            "label": "Xxlarge",
-            "selected": false
-          }
-        ]
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       }
     }
   }

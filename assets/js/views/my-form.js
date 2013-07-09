@@ -31,12 +31,11 @@ define([
         that.$el.append(snippet);
       });
       $("#render").val(that.renderForm({
-
-        text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
+        text: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
       }));
       this.$el.appendTo("#build form");
       //this removes any HTML from the snippet with a class of .descriptor
-      $('#build form .descriptor').remove();
+      //$('#build form .descriptor').remove();
       this.delegateEvents();
     }
 
