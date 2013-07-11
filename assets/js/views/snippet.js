@@ -74,7 +74,7 @@ define([
         break;
 
         case "render":
-          return this.$el.html(
+          return this.$el.text(
             //this is what gets rendered to the right tabs and to the rendered form
             that.template_build(that.model.getValues())
           )
