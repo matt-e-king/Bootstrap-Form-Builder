@@ -35,6 +35,41 @@
     }
   },
   {
+    "title": "Email field",
+    "fields": {
+      "id": {
+        "label": "ID / Name",
+        "type": "input",
+        "value": "emailaddress"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Email Address"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "Email Address"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": true
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
     "title": "Text Area",
     "fields": {
       "id": {

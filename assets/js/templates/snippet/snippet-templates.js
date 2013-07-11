@@ -9,6 +9,7 @@ define(function(require) {
   , button                   = require('text!templates/snippet/button.html')
   , buttondouble             = require('text!templates/snippet/buttondouble.html')
   , buttondropdown           = require('text!templates/snippet/buttondropdown.html')
+  , emailfield               = require('text!templates/snippet/emailfield.html')
   , multiplecheckboxes       = require('text!templates/snippet/multiplecheckboxes.html')
   , multiplecheckboxesinline = require('text!templates/snippet/multiplecheckboxesinline.html')
   , multipleradios           = require('text!templates/snippet/multipleradios.html')
@@ -37,6 +38,7 @@ define(function(require) {
     , singlebutton             : button
     , doublebutton             : buttondouble
     , buttondropdown           : buttondropdown
+    , emailfield               : emailfield
     , multiplecheckboxes       : multiplecheckboxes
     , multiplecheckboxesinline : multiplecheckboxesinline
     , multipleradios           : multipleradios
