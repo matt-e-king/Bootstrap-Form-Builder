@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
+</head>
+<body>
+
+<br /><br />
+
+	<div id="form-container" class="standard">
+
+		<form class="form-horizontal">
+
+			<h2>Horizontal Form with Labels</h2>
+
+				<label class="control-label" for="firstName">First Name</label>
+				<input type="text" id="firstName" placeholder="First Name">
+
+				<label class="control-label" for="firstName">First Name</label>
+				<input type="text" id="firstName" placeholder="First Name">
+
+				<label class="control-label" for="lastName">Last Name</label>
+				<input type="text" id="lastName" placeholder="Last Name">
+
+				<label class="control-label access-hide" for="hiddenLabel">Hidden Label</label>
+				<input type="text" id="hiddenLabel" placeholder="Hidden Label">
+
+				<p>Inline text to say something about the form.</p>
+
+				<label class="control-label" for="inputEmail">Email</label>
+				<input type="email" id="inputEmail" placeholder="Email Address">
+
+				<label class="control-label" for="inputPassword">Password</label>
+				<input type="password" id="inputPassword" placeholder="Password">
+
+				<label class="control-label" for="message">Message</label>
+				<textarea id="message" placeholder="Type a message" rows="5"></textarea>
+
+				<label class="control-label" for="selectMenu">Options</label>
+				<select id="selectMenu">
+					<option value="default" selected="selected">Please Select an Option</option>
+					<option value="Option 1">Option 1</option>
+					<option value="Option 2">Option 2</option>
+					<option value="Option 3">Option 3</option>
+					<option value="Option 4">Option 4</option>
+					<option value="Option 5">Option 5</option>
+				</select>
+
+			<h3>Subheading</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum nunc libero, id posuere diam tincidunt et.</p>
+
+				<label class="checkbox">
+					<input type="checkbox"> Remember me
+				</label>
+				<label class="checkbox">
+					<input type="checkbox"> Newsletter
+				</label>
+				<section>
+					<label class="checkbox inline">
+						<input type="checkbox" id="inlineCheckbox1" value="option1"> Yes
+					</label>
+
+					<label class="checkbox inline">
+						<input type="checkbox" id="inlineCheckbox1" value="option1"> No
+					</label>
+
+					<label class="checkbox inline">
+						<input type="checkbox" id="inlineCheckbox1" value="option1"> Depends
+					</label>	
+				</section>
+				<section>
+					<label class="radio inline">
+						<input type="radio" name="radioInline" id="inlineCheckbox1" value="option1"> Yes
+					</label>
+	
+					<label class="radio inline">
+						<input type="radio" name="radioInline" id="inlineCheckbox1" value="option1"> No
+					</label>
+	
+					<label class="radio inline">
+						<input type="radio" name="radioInline" id="inlineCheckbox1" value="option1"> Depends
+					</label>
+				</section>
+				<label class="radio">
+					<input type="radio" name="optionsRadios" id="" value="option1">
+					Radio Button 1
+				</label>
+
+				<label class="radio">
+					<input type="radio" name="optionsRadios" id="" value="option1">
+					Radio Button 2
+				</label>
+
+				<label class="radio">
+					<input type="radio" name="optionsRadios" id="" value="option1">
+					Radio Button 3, with a longer explantion of what this option could be
+				</label>
+
+				<button type="submit" class="btn">Sign in</button>
+
+		</form>
+
+		<form class="form-inline row-fluid">
+
+			<h2>Inline Form</h2>
+
+			<section class="controls-row">
+
+				<div class="span6">
+					<label class="access-hide">First Name</label>
+					<input type="text" placeholder="First Name">
+				</div>
+
+				<div class="span6">
+					<label class="access-hide">First Name</label>
+					<input type="text" placeholder="First Name">
+				</div>
+
+			</section>
+
+			<label class="access-hide">Address 1</label>
+			<input class="span12" type="text" placeholder="Address 1">
+			<label class="access-hide">Address 2</label>
+			<input class="span12" type="text" placeholder="Address 2">
+			<span class="help-block">Small blurb as helper text</span>
+
+			<section class="controls-row">
+
+				<div class="span6">
+					<label class="access-hide">City</label>
+					<input type="text" placeholder="City">
+				</div>
+				
+				<div class="span2">
+					<label class="access-hide">State</label>
+					<select id="states">
+						<option value="AZ">AZ</option>
+						<option value="AZ">AR</option>
+						<option value="AZ">HI</option>
+						<option value="AZ">NE</option>
+					</select>
+				</div>
+				
+				<div class="span4">
+					<label class="access-hide">Zip</label>
+					<input type="text" placeholder="Zip">
+				</div>
+				
+
+			</section>
+
+			<h3>Subheading 2</h3>
+
+			<div class="controls-row">
+
+				<p><strong>Check all that apply:</strong></p>
+
+				<label class="checkbox">
+						<input type="checkbox"> Remember me 
+				</label>
+
+				<label class="checkbox">
+					<input type="checkbox"> Newsletter
+				</label>
+
+				<label class="checkbox">
+					<input type="checkbox"> Newsletter
+				</label>
+
+				<label class="checkbox">
+						<input type="checkbox"> Remember me 
+				</label>
+
+				<label class="checkbox">
+					<input type="checkbox"> Newsletter
+				</label>
+
+				<label class="checkbox">
+					<input type="checkbox"> Newsletter
+				</label>
+
+			</div>
+
+			<div class="space"></div>
+
+			<div class="controls-row">
+
+				<p><strong>Please choose an option:</strong></p>
+
+				<label class="radio">
+					<input type="radio" name="optionsRadios" id="" value="option1">
+					Radio Button 1
+				</label>
+
+				<label class="radio">
+					<input type="radio" name="optionsRadios" id="" value="option1">
+					Radio Button 2
+				</label>
+
+				<label class="radio">
+					<input type="radio" name="optionsRadios" id="" value="option1">
+					Radio Button 3
+				</label>
+
+			</div>
+
+			<div class="space"></div>
+
+			<p><strong>Please choose an option:</strong></p>
+
+			<label class="radio span12">
+				<input type="radio" name="optionsRadios" id="" value="option1">
+				Radio Button 1
+			</label>
+
+			<label class="radio span12">
+				<input type="radio" name="optionsRadios" id="" value="option1">
+				Radio Button 2
+			</label>
+
+			<label class="radio span12">
+				<input type="radio" name="optionsRadios" id="" value="option1">
+				Radio Button 3
+			</label>
+
+			<div class="space"></div>
+
+			<p><strong>Select all that apply:</strong></p>
+
+			<label class="checkbox span12">
+				<input type="checkbox"> Remember me 
+			</label>
+
+			<label class="checkbox span12">
+				<input type="checkbox"> Newsletter
+			</label>
+
+			<label class="checkbox span12">
+				<input type="checkbox"> Newsletter
+			</label>
+
+			<input class="span12" type="text" placeholder="Full Name">
+
+			<button type="submit" class="btn">Submit Form</button>
+
+		</form>
+
+	</div>
+
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!--[if lt IE 10]>
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+		
+			$('.form-inline label.access-hide').removeClass('access-hide');
+
+		});
+	
+	</script>
+<![endif]-->
+
+</body>
+</html>
