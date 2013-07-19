@@ -1,8 +1,0 @@
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label <% if(hidelabel) {%>access-hide<% } %>" for="<%= id %>"><%= label %></label>
-  <div class="controls">
-    <input type="text" name="<%= id %>" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<%= label %>" placeholder="<%= placeholder %>" <% if(required) {%> ektdesignns_validation="string-req" ektdesignns_datatype="string" ektdesignns_basetype="text" ektdesignns_schema="&lt;xs:minLength value=&quot;1&quot;/&gt;" ektdesignns_validate="re:/\S+/" ektdesignns_invalidmsg="Cannot be blank" onblur="design_validate_re(/\S+/,this,'Cannot be blank');"  <% } %> class="design_textfield" />
-    <% if (helptext.length > 0) { %><p class="help-block"><%= helptext %></p><% } %>
-  </div>
-</div>
