@@ -3,7 +3,7 @@
   <label class="control-label <% if(hidelabel) {%>access-hide<% } %>" for="<%= name %>"><%= label %></label>
   <div class="controls"><% _.each(checkboxes, function(checkbox, i){ %>
     <label class="checkbox" for="<%= name+'-'+i %>">
-      <input type="checkbox" name="<%= name %>" id="<%= name+'-'+i %>" value="on" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= name %>" title="<%= label %>" ektdesignns_nodetype="element" />
+      <input type="checkbox" name="<%= name %>" id="<%= name+'-'+i %>" value="on" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= name %>" title="<%= label %>" ektdesignns_nodetype="element" <% if (i < 1) { %> <% if(required) {%>data-validation-minchecked-minchecked="<%= minrequired %>" data-validation-minchecked-message="<%= requiredmessage %>"<% } %><% } %>/>
       <%= checkbox %>
     </label><% }); %>
   </div>

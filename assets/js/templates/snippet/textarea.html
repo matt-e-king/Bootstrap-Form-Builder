@@ -2,6 +2,6 @@
 <div class="control-group">
   <label class="control-label" for ="<%= id %>"><%= label %></label>
   <div class="controls">                     
-    <textarea name="<%= id %>" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<%= label %>" placeholder="<%= textarea %>" <% if(required) {%> ektdesignns_validation="string-req" ektdesignns_datatype="string" ektdesignns_basetype="text" ektdesignns_schema="&lt;xs:minLength value=&quot;1&quot;/&gt;" ektdesignns_validate="re:/\S+/" ektdesignns_invalidmsg="Cannot be blank" onblur="design_validate_re(/\S+/,this,'Cannot be blank');"  <% } %> class="design_textfield"></textarea>
+    <textarea name="<%= id %>" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<%= label %>" placeholder="<%= textarea %>" <% if(required) {%> requried="required" data-validation-required-message="<%= requiredmessage %>" <% } %>></textarea>
   </div>
 </div>

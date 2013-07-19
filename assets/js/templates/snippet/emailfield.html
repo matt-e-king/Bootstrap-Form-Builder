@@ -2,7 +2,6 @@
 <div class="control-group">
   <label class="control-label <% if(hidelabel) {%>access-hide<% } %>" for="<%= id %>"><%= label %></label>
   <div class="controls">
-    <input type="text" name="<%= id %>" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<%= label %>" placeholder="<%= placeholder %>" <% if(required) {%> ektdesignns_validation="email-req" ektdesignns_translate="false" ektdesignns_datatype="string" ektdesignns_basetype="text" ektdesignns_schema="&lt;xs:pattern value=&quot;[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+)*@[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+)*&quot; /&gt;" ektdesignns_validate="re:/^([A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+)*@[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+)*)$/" ektdesignns_invalidmsg="Email address (required)" onblur="design_validate_re(/^([A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+)*@[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-\/=\?\^_`\{-~]+)*)$/,this,'Email address (required)');"  <% } %> class="design_textfield" />
-    <% if (helptext.length > 0) { %><p class="help-block"><%= helptext %></p><% } %>
+    <input type="text" name="<%= id %>" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<%= label %>" placeholder="<%= placeholder %>" <% if(required) {%> ektdesignns_validation="email-req" ektdesignns_translate="false" ektdesignns_datatype="string" ektdesignns_basetype="text" required="required" data-validation-required-message="<%= requiredmessage %>" <% } %> class="design_textfield" />
   </div>
 </div>
