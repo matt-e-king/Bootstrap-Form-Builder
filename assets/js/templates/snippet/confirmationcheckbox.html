@@ -1,0 +1,10 @@
+<!-- Multiple Checkboxes (inline) -->
+<div class="control-group">
+  <label class="control-label <% if(hidelabel) {%>access-hide<% } %>" for="<%= name %>"><%= label %></label>
+  <div class="controls">
+    <label class="checkbox" for="<%= name %>">
+      <input type="checkbox" name="<%= name %>" id="<%= name %>" value="<%= checkbox %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= name %>" title="<%= label %>" ektdesignns_nodetype="element" <% if(required) {%>required data-validation-required-message="<%= requiredmessage %>"<% } %>/>
+      <%= checkbox %>
+    </label>
+  </div>
+</div>
