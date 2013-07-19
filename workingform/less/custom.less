@@ -1,10 +1,4 @@
-body {
-  font-size: 14px;
-  line-height: 20px;
-  background-color: #ffffff;
-}
-
-#bootstrap-wrapper {
+section#content div#main #bootstrap-wrapper {
 
 	@import "bootstrap.less";
 	@dark-grey: #695F5E;
@@ -16,8 +10,22 @@ body {
 
 	/* @group Overriding NAU Styles */
 
+	input {
+		float:none;
+		max-width:none;
+	}
+
 	div {
 		margin-top:0px !important;
+	}
+
+	li {
+		margin:0px;
+	}
+
+	ul {
+		list-style-type: none;
+		list-style: none;
 	}
 
 	.form-horizontal select {
@@ -124,11 +132,32 @@ body {
 			}
 		}
 
+		#all-error-messages {
+			ul {
+				list-style-type: none;
+				margin:0px;
+				padding:0px;
+				height:100%;
+				width:100%;
+			}
+		}
+
 		.control-group.error {
+			border:none;
+			padding:0px;
 			.help-block {
 				.alert;
 				.alert-error;
 				.help-block-styles;
+				ul {
+					list-style:none;
+					list-style-type:none;
+					width:100%;
+				}
+				li {
+					padding:0px;
+					margin:0px;
+				}
 			}
 		}
 

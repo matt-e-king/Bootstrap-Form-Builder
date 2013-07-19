@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/jqBootstrapValidation.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<script>
+	  
+    $(function() {
+
+    	//global variable that is immediately define that the form hasn't been submitted
+    	var notSubmitted = true;
+
+        $("input,textarea,select").jqBootstrapValidation(
+            {
+                preventSubmit: true,
+                submitError: function($form, event, errors) {
+                    // Here I do nothing, but you could do something like display 
+                    // the error messages to the user, log, etc.  
+                  	
+                    //set an instance of the current scope to a variable called "that"
+                    var that = this;
+                    var errorList = "";
+                    var allErrorMessage = $('#all-error-messages');
+                    var errorHeader = '<h4>Your submission contained errors. Please review the following list:</h4><span class="access-hide">For JAWS screen reader users, press Insert F7 to get a list of links of required fields.</span>';
+
+                    //takes the argument "errors" and creates a list of links"
+                    for(var fieldName in errors) {
+                    	errorList += "<li><a href='"+fieldName+"'>"+errors[fieldName][0]+"</a></li>";
+                    }
+
+                    //iterates through this condition only the first time the form is submitted
+                    //this is so it doesn't reanimate when the user clicks "submit" a second time
+                    if(notSubmitted) {
+                    	allErrorMessage.hide().removeClass('access-hide');
+                        allErrorMessage.delay(200).slideDown().html('<div role="alert"><ul>' + errorHeader + errorList + '</ul></div>');
+                    }
+                    
+                    allErrorMessage.html('<div role="alert">' + errorHeader + "<ul>" + errorList + '</ul></div>');
+
+                    $('html, body').animate({
+		         			scrollTop: allErrorMessage.offset().top-500
+		     		}, 1000, function() {
+		     			$('#focus').delay(150).focus();
+		     		});
+
+                    $('#all-error-messages li a').on('click', function(e) {
+                    	e.preventDefault();
+                    	var field = $(this).attr('href');
+                    	//passes the value of the links href to a function called setFocus
+                    	that.setFocus(field);
+                    });
+
+                	notSubmitted = false;
+
+
+                },
+                submitSuccess: function($form, event) {
+                    event.preventDefault();
+                },
+                filter: function() {
+                    return $(this).is(":visible");
+                },
+
+                //this function changes focus to the cooresponding field when a error message is clicked on
+                setFocus: function(field) {
+                	$('[name='+field+']').focus();
+                	//console.log(field);
+                }
+            }
+        );
+    });
+        
+	</script>
+</head>
+<body>
+
+<div id="bootstrap-wrapper">
+
+<form class="form-horizontal" novalidate>
+
+<!-- Form Name -->
+<h3>Form Name</h3>
+
+<input type="text" id="focus" class="access-hide"/>
+<div id="all-error-messages" class="access-hide alert alert-error"></div>
+
+<!-- Multiple Radios -->
+<div class="control-group">
+  <label class="control-label " for="console">Gaming Console</label>
+  <div class="controls">
+  <ektdesignns_choices title="Gaming Console" ektdesignns_nodetype="element" id="console" name="console" ektdesignns_caption="Gaming Console" ektdesignns_name="console">
+    <label class="radio" for="console-0" contenteditable="true" unselectable="off">
+      <input type="radio" name="console" id="console-0" value="PS3" ektdesignns_nodetype="item"   data-validation-minchecked-minchecked="1" data-validation-minchecked-message="You must select your favorite gaming console">
+      PS3
+    </label>
+    <label class="radio" for="console-1" contenteditable="true" unselectable="off">
+      <input type="radio" name="console" id="console-1" value="XBox 360" ektdesignns_nodetype="item" >
+      XBox 360
+    </label>
+    <label class="radio" for="console-2" contenteditable="true" unselectable="off">
+      <input type="radio" name="console" id="console-2" value="Game Cube" ektdesignns_nodetype="item" >
+      Game Cube
+    </label>
+    </ektdesignns_choices>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="control-group">
+  <label class="control-label " for="gender">Gender</label>
+  <div class="controls">
+  	<ektdesignns_choices title="Gender" ektdesignns_nodetype="element" id="gender" name="gender" ektdesignns_caption="Gender" ektdesignns_name="gender">
+    <label class="radio inline" for="gender-0" contenteditable="true" unselectable="off">
+      <input type="radio" name="gender" id="gender-0" value="Male" ektdesignns_nodetype="item"  data-validation-minchecked-minchecked="1" data-validation-minchecked-message="Please select a gender!">
+      Male
+    </label>
+    <label class="radio inline" for="gender-1" contenteditable="true" unselectable="off">
+      <input type="radio" name="gender" id="gender-1" value="Female" ektdesignns_nodetype="item" >
+      Female
+    </label>
+    </ektdesignns_choices>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="control-group">
+  <label class="control-label access-hide" for="singlebutton">Submit Button</label>
+  <div class="controls">
+    <input type="submit" id="singlebutton" name="singlebutton" class='btn btn-default' value="Submit" />
+  </div>
+</div>
+
+
+</form>
+
+</div>
+
+
+
+
+
+<!--[if lt IE 10]>
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+		
+			$('#b-default label.access-hide').removeClass('access-hide');
+
+		});
+	
+	</script>
+<![endif]-->
+
+</body>
+</html>

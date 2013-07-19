@@ -475,6 +475,9 @@
 
                 // Better flag it up as a warning.
                 $controlGroup.removeClass("success error").addClass("warning");
+
+                //NAU addition
+                //If any errors are found, it calls the animate function
                 $.jqBootstrapValidation("animateError", $controlGroup, $helpBlock);
                 // How many errors did we find?
                 if (settings.options.semanticallyStrict && errorsFound.length === 1) {
@@ -483,14 +486,17 @@
                     ( settings.options.prependExistingHelpBlock ? $helpBlock.data("original-contents") : "" ));
                 } else {
                   // Multiple? Being sloppy? Glue them together into an UL.
-                  $helpBlock.html("<ul role=\"alert\"><li>" + errorsFound.join("</li><li>") + "</li></ul>" +
+                  //NAU addition - these UL tags used to contain the role="alert" attr but we only want it on the top summary
+                  $helpBlock.html("<ul><li>" + errorsFound.join("</li><li>") + "</li></ul>" +
                     ( settings.options.prependExistingHelpBlock ? $helpBlock.data("original-contents") : "" ));
                 }
               } else {
                 $controlGroup.removeClass("warning error success");
+                //NAU addition - call animate when it doesn't find any errors
                 $.jqBootstrapValidation("animateError", $controlGroup, $helpBlock);
                 if (value.length > 0) {
                   $controlGroup.addClass("success");
+                  //NAU addition - also call the animation function when a field is set to "success"
                   $.jqBootstrapValidation("animateError", $controlGroup, $helpBlock);
                 }
                 //$helpBlock.html($helpBlock.data("original-contents"));
@@ -506,6 +512,8 @@
           });
         });
       },
+      //NAU addition - animate function - this animates the "help-block" slide down and up based on pretty strict
+      //conditions. We can add any animate we wants in this function
       animateError: function(controlGroup, helpBlock) {
         if((controlGroup.hasClass('warning') || controlGroup.hasClass('error')) && helpBlock.is(':hidden')) {
           helpBlock.delay(250).slideDown();
