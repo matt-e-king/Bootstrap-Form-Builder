@@ -1,3 +1,6 @@
+div#main div.form label {
+  float: none;
+}
 section#content div#main #bootstrap-wrapper {
   /*!
  * Bootstrap v2.3.2
