@@ -1,5 +1,10 @@
 div#main div.form label {
   float: none;
+  clear: none;
+  margin-right: 0px;
+  text-align: left;
+  width: inherit;
+  font-size: 12px !important;
 }
 section#content div#main #bootstrap-wrapper {
   /*!
@@ -3262,9 +3267,12 @@ section#content div#main #bootstrap-wrapper .visible-print {
     overflow: visible !important;
   }
 }
+section#content div#main #bootstrap-wrapper select,
+section#content div#main #bootstrap-wrapper textarea,
 section#content div#main #bootstrap-wrapper input {
   float: none;
   max-width: none;
+  font-size: 12px !important;
 }
 section#content div#main #bootstrap-wrapper div {
   margin-top: 0px !important;
@@ -3300,6 +3308,7 @@ section#content div#main #bootstrap-wrapper h3 {
 }
 section#content div#main #bootstrap-wrapper h4 {
   color: #695f5e;
+  margin-top: 15px;
 }
 section#content div#main #bootstrap-wrapper p.header-sub {
   margin-top: -10px;
@@ -3338,6 +3347,9 @@ section#content div#main #bootstrap-wrapper .form-horizontal .control-group {
 section#content div#main #bootstrap-wrapper .form-horizontal .control-label {
   width: 140px;
 }
+section#content div#main #bootstrap-wrapper .form-horizontal select {
+  margin-bottom: 5px;
+}
 section#content div#main #bootstrap-wrapper .form-horizontal .controls {
   margin-left: 160px;
 }
@@ -3348,9 +3360,12 @@ section#content div#main #bootstrap-wrapper .form-horizontal .controls {
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .help-block-styles {
   font-size: .88em;
-  margin: 3px 0px 0px 0px !important;
+  margin: 5px 0px 0px 0px !important;
   width: 80%;
   padding: 0px 6px;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal .radio {
+  padding-top: 5px;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .help-block {
   padding: 8px 35px 8px 14px;
@@ -3366,7 +3381,7 @@ section#content div#main #bootstrap-wrapper .form-horizontal .help-block {
   border-color: #eed3d7;
   color: #b94a48;
   font-size: .88em;
-  margin: 3px 0px 0px 0px !important;
+  margin: 5px 0px 0px 0px !important;
   width: 80%;
   padding: 0px 6px;
 }
@@ -3400,7 +3415,7 @@ section#content div#main #bootstrap-wrapper .form-horizontal .control-group.erro
   border-color: #eed3d7;
   color: #b94a48;
   font-size: .88em;
-  margin: 3px 0px 0px 0px !important;
+  margin: 5px 0px 0px 0px !important;
   width: 80%;
   padding: 0px 6px;
 }
@@ -3426,7 +3441,7 @@ section#content div#main #bootstrap-wrapper .form-horizontal .control-group.warn
   padding-top: 14px;
   padding-bottom: 14px;
   font-size: .88em;
-  margin: 3px 0px 0px 0px !important;
+  margin: 5px 0px 0px 0px !important;
   width: 80%;
   padding: 0px 6px;
 }
@@ -3444,7 +3459,7 @@ section#content div#main #bootstrap-wrapper .form-horizontal .control-group.succ
   border-color: #d6e9c6;
   color: #468847;
   font-size: .88em;
-  margin: 3px 0px 0px 0px !important;
+  margin: 5px 0px 0px 0px !important;
   width: 80%;
   padding: 0px 6px;
 }

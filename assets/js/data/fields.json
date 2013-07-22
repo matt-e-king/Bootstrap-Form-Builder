@@ -55,7 +55,7 @@
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
-        "value": "Email is Required"
+        "value": "Email Address is Required"
       },
       "required": {
         "label": "Required",

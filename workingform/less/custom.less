@@ -1,5 +1,10 @@
 div#main div.form label {
 	float:none;
+	clear:none;
+	margin-right:0px;
+	text-align:left;
+	width:inherit;
+	font-size:12px !important;
 }
 
 section#content div#main #bootstrap-wrapper {
@@ -14,9 +19,10 @@ section#content div#main #bootstrap-wrapper {
 
 	/* @group Overriding NAU Styles */
 
-	input {
+	select, textarea, input {
 		float:none;
 		max-width:none;
+		font-size:12px !important;
 	}
 
 	div {
@@ -63,6 +69,7 @@ section#content div#main #bootstrap-wrapper {
 
 	h4 {
 		color:@dark-grey;
+		margin-top:15px;
 	}
 
 	p.header-sub {
@@ -111,6 +118,10 @@ section#content div#main #bootstrap-wrapper {
 			width:140px;
 		}
 
+		select {
+			margin-bottom:5px;
+		}
+
 		.controls {
 			margin-left:160px;
 			@media (max-width: 480px) {
@@ -120,9 +131,13 @@ section#content div#main #bootstrap-wrapper {
 
 		.help-block-styles {
 			font-size:.88em;
-			margin:3px 0px 0px 0px !important;
+			margin:5px 0px 0px 0px !important;
 			width:80%;
 			padding:0px 6px;
+		}
+
+		.radio {
+			padding-top:5px;
 		}
 
 		.help-block {
