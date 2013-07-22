@@ -51,12 +51,26 @@ define([
       });
 
       switch (withAttributes) {
+
+        case "initial":
+           return this.$el.html(
+
+              //this is what gets rendered to the form builder on the left
+                that.template(that.model.getValues())
+
+            ).attr({
+              "data-content"     : content
+              , "data-title"     : that.model.get("title")
+              , "data-trigger"   : "manual"
+              , "data-html"      : true
+            });
+        break;
+
         case "with attributes":
            return this.$el.html(
 
               //this is what gets rendered to the form builder on the left
                 that.template_build(that.model.getValues())
-
 
             ).attr({
               "data-content"     : content

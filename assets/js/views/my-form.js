@@ -27,11 +27,12 @@ define([
       //Render Snippet Views
       this.$el.empty();
       var that = this;
-      _.each(this.collection.renderAll(), function(snippet){
+      _.each(this.collection.renderAllInitial(), function(snippet){
         that.$el.append(snippet);
       });
       $("#render").html(that.renderForm({
-        text: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
+        javascript: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
+        , text: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
       }));
       this.$el.appendTo("#build form");
       //this removes any HTML from the snippet with a class of .descriptor

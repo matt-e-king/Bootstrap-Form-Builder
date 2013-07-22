@@ -1,5 +1,6 @@
 define(function(require) {
   var formname               = require('text!templates/snippet/formname.html')
+  , javascript               = require('text!templates/snippet/javascript.html')
   , prependedtext            = require('text!templates/snippet/prependedtext.html')
   , search                   = require('text!templates/snippet/searchinput.html')
   , textinput                = require('text!templates/snippet/textinput.html')
@@ -30,6 +31,7 @@ define(function(require) {
 
   return {
     formname                   : formname
+    , javascript               : javascript
     , prependedtext            : prependedtext
     , search                   : search
     , textinput                : textinput
