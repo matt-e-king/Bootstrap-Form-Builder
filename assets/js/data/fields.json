@@ -1,9 +1,10 @@
 [
   {
     "title": "Text input",
+    "testing" : false,
     "fields": {
       "id": {
-        "label": "ID / Name",
+        "label": "ID / Name (unique)",
         "type": "input",
         "value": "textinput"
       },
@@ -38,7 +39,7 @@
     "title": "Email field",
     "fields": {
       "id": {
-        "label": "ID / Name",
+        "label": "ID / Name (unique)",
         "type": "input",
         "value": "emailAddress"
       },
@@ -73,7 +74,7 @@
     "title": "Text Area",
     "fields": {
       "id": {
-        "label": "ID / Name",
+        "label": "ID / Name (unique)",
         "type": "input",
         "value": "textarea"
       },
@@ -100,6 +101,85 @@
     }
   },
   {
+    "title": "Select Basic",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "selectbasic"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Select Basic"
+      },
+      "defaultoption": {
+        "label": "Default Option",
+        "type": "input",
+        "value": "-- Please Choose Option --"
+      },
+      "options": {
+        "label": "Options",
+        "type": "textarea-split",
+        "value": [
+          "Option one",
+          "Option two"
+        ]
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "e.g. Please select a State"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Date Field",
+    "render": true
+    , "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "date"
+      },
+      "label": {
+        "label": "Date Field",
+        "type": "input",
+        "value": "Date"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "DD/MM/YYYY"
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Please select a Date"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
     "title": "Multiple Radios",
     "fields": {
       "name": {
@@ -120,15 +200,15 @@
           "Option two"
         ]
       },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
-      },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
         "value": "e.g Please select a favorite food"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       },
       "hidelabel": {
         "label": "Hide Label",
@@ -159,55 +239,20 @@
           3
         ]
       },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
-      },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
         "value": "e.g Please select a favorite food"
       },
-      "hidelabel": {
-        "label": "Hide Label",
-        "type": "checkbox",
-        "value": false
-      }
-    }
-  },
-  {
-    "title": "Confirmation Checkbox",
-    "fields": {
-      "name": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "confirm"
-      },
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Confirmation Checkbox"
-      },
-      "checkbox": {
-        "label": "Checkbox Text",
-        "type": "input",
-        "value": "I agree to the terms"
-      },
       "required": {
         "label": "Required",
         "type": "checkbox",
         "value": false
       },
-      "requiredmessage": {
-        "label": "Required Message",
-        "type": "input",
-        "value": "e.g. Please agree to our terms"
-      },
       "hidelabel": {
         "label": "Hide Label",
         "type": "checkbox",
-        "value": true
+        "value": false
       }
     }
   },
@@ -232,15 +277,15 @@
           "Option two"
         ]
       },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
-      },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
         "value": "Please select minimum"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       },
       "minrequired": {
         "label": "Minimum Selected",
@@ -276,15 +321,15 @@
           3
         ]
       },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
-      },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
         "value": "Please select minimum"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       },
       "minrequired": {
         "label": "Minimum Selected",
@@ -299,40 +344,37 @@
     }
   },
   {
-    "title": "Select Basic",
+    "title": "Confirmation Checkbox",
     "fields": {
-      "id": {
-        "label": "ID / Name",
+      "name": {
+        "label": "ID / Name (unique)",
         "type": "input",
-        "value": "selectbasic"
+        "value": "confirm"
       },
       "label": {
         "label": "Label Text",
         "type": "input",
-        "value": "Select Basic"
+        "value": "Confirmation Checkbox"
       },
-      "defaultoption": {
-        "label": "Default Option",
+      "checkbox": {
+        "label": "Checkbox Text",
         "type": "input",
-        "value": "-- Please Choose Option --"
-      },
-      "options": {
-        "label": "Options",
-        "type": "textarea-split",
-        "value": [
-          "Option one",
-          "Option two"
-        ]
+        "value": "I agree to the terms"
       },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
-        "value": "e.g. Please select a State"
+        "value": "e.g. Please agree to our terms"
       },
       "required": {
         "label": "Required",
         "type": "checkbox",
         "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": true
       }
     }
   }

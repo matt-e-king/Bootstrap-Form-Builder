@@ -9,6 +9,7 @@ define([
   , "text!templates/popover/popover-ignore.html"
   , "templates/snippet/snippet-templates"
   , "templates/build/snippet-templates"
+  , "templates/render/snippet-templates"
   , "bootstrap"
 ], function(
   $, _, Backbone
@@ -21,18 +22,30 @@ define([
   , _PopoverIgnore
   , _snippetTemplates
   , _buildTemplates
+  , _renderTemplates
 ){
   return Backbone.View.extend({
     tagName: "div"
-    , className: "component" 
+    , className: "component"
     , initialize: function(){
-      this.alternateBuild = this.model.alternateBuid()
+      this.alternateBuild = this.model.alternateBuid();
+      this.alternateRender = this.model.alternateRender();
       this.template = _.template(_snippetTemplates[this.model.idFriendlyTitle()])
-      if(this.alternateBuild) {
+      
+      if(this.alternateBuild && !this.alternateRender) {
         this.template_build = _.template(_buildTemplates[this.model.idFriendlyTitle()])
-      } else {
-        this.template_build = this.template
+        this.template_render = _.template(_buildTemplates[this.model.idFriendlyTitle()])
+      } else if (!this.alternateBuild && this.alternateRender) {
+        this.template_build = this.template;
+        this.template_render = _.template(_renderTemplates[this.model.idFriendlyTitle()])
+      } else if (this.alternateBuild && this.alternateRender) {
+        this.template_build = _.template(_buildTemplates[this.model.idFriendlyTitle()])
+        this.template_render = _.template(_renderTemplates[this.model.idFriendlyTitle()])
+      } else if (!this.alternateBuild && !this.alternateRender) {
+        this.template_build = this.template;
+        this.template_render = this.template;
       }
+
       this.popoverTemplates = {
         "input" : _.template(_PopoverInput)
         , "select" : _.template(_PopoverSelect)
@@ -52,21 +65,7 @@ define([
 
       switch (withAttributes) {
 
-        case "initial":
-           return this.$el.html(
-
-              //this is what gets rendered to the form builder on the left
-                that.template(that.model.getValues())
-
-            ).attr({
-              "data-content"     : content
-              , "data-title"     : that.model.get("title")
-              , "data-trigger"   : "manual"
-              , "data-html"      : true
-            });
-        break;
-
-        case "with attributes":
+        case "builder":
            return this.$el.html(
 
               //this is what gets rendered to the form builder on the left
@@ -80,17 +79,10 @@ define([
             });
         break;
 
-        case "no attributes":
-          return this.$el.html(
-            //this is what gets rendered to the right tabs and to the rendered form
-            that.template(that.model.getValues())
-          )
-        break;
-
         case "render":
           return this.$el.text(
             //this is what gets rendered to the right tabs and to the rendered form
-            that.template_build(that.model.getValues())
+            that.template_render(that.model.getValues())
           )
         break;
 
@@ -100,26 +92,6 @@ define([
             that.template(that.model.getValues())
           )
       }
-
-      /*if (withAttributes) {
-        return this.$el.html(
-
-          //this is what gets rendered to the form builder on the left
-            that.template_build(that.model.getValues())
-
-
-        ).attr({
-          "data-content"     : content
-          , "data-title"     : that.model.get("title")
-          , "data-trigger"   : "manual"
-          , "data-html"      : true
-        });
-      } else {
-        return this.$el.html(
-          //this is what gets rendered to the right tabs and to the rendered form
-          that.template(that.model.getValues())
-        )
-      }*/
     }
   });
 });

@@ -27,12 +27,11 @@ define([
       //Render Snippet Views
       this.$el.empty();
       var that = this;
-      _.each(this.collection.renderAllInitial(), function(snippet){
+      _.each(this.collection.renderAll(), function(snippet){
         that.$el.append(snippet);
       });
       $("#render").html(that.renderForm({
-        javascript: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
-        , text: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
+        text: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
       }));
       this.$el.appendTo("#build form");
       //this removes any HTML from the snippet with a class of .descriptor
@@ -76,6 +75,7 @@ define([
     }
 
     , handleTempDrop: function(mouseEvent, model, index){
+      console.log(model);
       if(mouseEvent.pageX >= this.$build.position().left &&
          mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&
          mouseEvent.pageY >= this.$build.position().top &&

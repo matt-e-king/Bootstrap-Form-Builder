@@ -3285,7 +3285,7 @@ section#content div#main #bootstrap-wrapper ul {
   list-style: none;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal select {
-  width: 80% !important;
+  width: 85% !important;
 }
 section#content div#main #bootstrap-wrapper .access-hide {
   position: absolute;
@@ -3341,11 +3341,14 @@ section#content div#main #bootstrap-wrapper .form-horizontal input[type="color"]
 section#content div#main #bootstrap-wrapper .form-horizontal .uneditable-input {
   width: 80%;
 }
+section#content div#main #bootstrap-wrapper .form-horizontal textarea {
+  height: 75px;
+}
 section#content div#main #bootstrap-wrapper .form-horizontal .control-group {
   margin-bottom: 10px;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .control-label {
-  width: 140px;
+  width: 150px;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal select {
   margin-bottom: 5px;
@@ -3390,12 +3393,22 @@ section#content div#main #bootstrap-wrapper .form-horizontal .help-block ul {
   margin: 0px;
   padding: 3px;
 }
+section#content div#main #bootstrap-wrapper .form-horizontal .help-block a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+}
 section#content div#main #bootstrap-wrapper .form-horizontal #all-error-messages ul {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
   height: 100%;
   width: 100%;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal #all-error-messages a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .control-group.error {
   border: none;

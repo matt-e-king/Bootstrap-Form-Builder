@@ -47,19 +47,15 @@ define([
         title: "Original"
         , collection: new MyFormSnippetsCollection(
         [
-          { "title" : "Form Name"
+          { "title" : "Form Settings"
             , "build" : false
+            , "render" : true
             , "fields": {
               "name" : {
-                "label"   : "Form Name"
-                , "type"  : "input"
+                "label"   : "Ignore"
+                , "type"  : "ignore"
                 , "value" : "Form Settings"
-              }
-            }
-          },
-          { "title": "Javascript"
-            , "build" : true
-            , "fields": {
+              },
               "date": {
               "label": "Date Fields",
               "type": "checkbox",
