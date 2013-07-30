@@ -1,0 +1,12 @@
+<div class="form-group">
+	<label for="<%= id %>" class="col-lg-4 control-label"><%= label %></label>
+	<div class="col-lg-8 input-block">
+		<select class="form-control" name="<%= id %>" id="<%= id %>" ektdesignns_maxoccurs="1" ektdesignns_nodetype="element" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<%= label %>"<% if(required) {%> required="required" data-validation-required-message="<%= requiredmessage %>"<% } %>>
+
+
+    	<option value="" selected="selected"><%= defaultoption %></option>
+    	<% _.each(options, function(option) { %>
+      <option value="<%= option %>"><%= option %></option><% }); %>
+    </select>
+	</div>
+</div>

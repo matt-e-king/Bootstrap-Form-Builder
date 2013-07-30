@@ -2,6 +2,7 @@
   {
     "title": "Single Button",
     "build": true,
+    "render": true,
     "fields": {
       "id": {
         "label": "ID / Name",

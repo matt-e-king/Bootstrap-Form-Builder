@@ -1,7 +1,7 @@
 [
   {
     "title": "Text input",
-    "render" : true,
+    "testing" : false,
     "fields": {
       "id": {
         "label": "ID / Name (unique)",
@@ -37,7 +37,6 @@
   },
   {
     "title": "Email field",
-    "render" : true,
     "fields": {
       "id": {
         "label": "ID / Name (unique)",
@@ -73,7 +72,6 @@
   },
   {
     "title": "Text Area",
-    "render" : true,
     "fields": {
       "id": {
         "label": "ID / Name (unique)",
@@ -104,7 +102,6 @@
   },
   {
     "title": "Select Basic",
-    "render" : true,
     "fields": {
       "id": {
         "label": "ID / Name (unique)",
@@ -184,7 +181,6 @@
   },
   {
     "title": "Multiple Radios",
-    "render" : true,
     "fields": {
       "name": {
         "label": "Group Name",
@@ -223,7 +219,6 @@
   },
   {
     "title": "Multiple Radios Inline",
-    "render" : true,
     "fields": {
       "name": {
         "label": "Group Name",
@@ -263,7 +258,6 @@
   },
   {
     "title": "Multiple Checkboxes",
-    "render" : true,
     "fields": {
       "name": {
         "label": "Group Name",
@@ -283,6 +277,21 @@
           "Option two"
         ]
       },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Please select minimum"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "minrequired": {
+        "label": "Minimum Selected",
+        "type": "input",
+        "value": "1"
+      },
       "hidelabel": {
         "label": "Hide Label",
         "type": "checkbox",
@@ -292,7 +301,6 @@
   },
   {
     "title": "Multiple Checkboxes Inline",
-    "render" : true,
     "fields": {
       "name": {
         "label": "Group Name",
@@ -313,6 +321,21 @@
           3
         ]
       },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Please select minimum"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "minrequired": {
+        "label": "Minimum Selected",
+        "type": "input",
+        "value": "1"
+      },
       "hidelabel": {
         "label": "Hide Label",
         "type": "checkbox",
@@ -322,7 +345,6 @@
   },
   {
     "title": "Confirmation Checkbox",
-    "render" : true,
     "fields": {
       "name": {
         "label": "ID / Name (unique)",

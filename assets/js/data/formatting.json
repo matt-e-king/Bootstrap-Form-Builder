@@ -45,7 +45,6 @@
   {
     "title": "Space",
     "build": true,
-    "render": true,
     "fields": {
       "padding": {
         "label": "Padding",
