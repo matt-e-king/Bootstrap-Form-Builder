@@ -869,6 +869,112 @@ section#content div#main #bootstrap-wrapper .alert-block > ul {
 section#content div#main #bootstrap-wrapper .alert-block p + p {
   margin-top: 5px;
 }
+section#content div#main #bootstrap-wrapper .tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: visible;
+}
+section#content div#main #bootstrap-wrapper .tooltip.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+section#content div#main #bootstrap-wrapper .tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+section#content div#main #bootstrap-wrapper .tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+section#content div#main #bootstrap-wrapper .tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+section#content div#main #bootstrap-wrapper .tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+section#content div#main #bootstrap-wrapper .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+}
+section#content div#main #bootstrap-wrapper .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+section#content div#main #bootstrap-wrapper .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: #003466;
+  border-width: 5px 5px 0;
+}
+section#content div#main #bootstrap-wrapper .tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  border-top-color: r #003466;
+  border-width: 5px 5px 0;
+}
+section#content div#main #bootstrap-wrapper .tooltip.top-right .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  border-top-color: #003466;
+  border-width: 5px 5px 0;
+}
+section#content div#main #bootstrap-wrapper .tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-right-color: #003466;
+  border-width: 5px 5px 5px 0;
+}
+section#content div#main #bootstrap-wrapper .tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-left-color: #003466;
+  border-width: 5px 0 5px 5px;
+}
+section#content div#main #bootstrap-wrapper .tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #003466;
+  border-width: 0 5px 5px;
+}
+section#content div#main #bootstrap-wrapper .tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  border-bottom-color: #003466;
+  border-width: 0 5px 5px;
+}
+section#content div#main #bootstrap-wrapper .tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  border-bottom-color: #003466;
+  border-width: 0 5px 5px;
+}
+section#content div#main #bootstrap-wrapper .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+section#content div#main #bootstrap-wrapper .fade.in {
+  opacity: 1;
+}
 section#content div#main #bootstrap-wrapper select,
 section#content div#main #bootstrap-wrapper textarea,
 section#content div#main #bootstrap-wrapper input {
@@ -899,6 +1005,12 @@ section#content div#main #bootstrap-wrapper .access-hide {
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .input-block {
   padding-left: 5px;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal .btn-default {
+  background-color: #003466;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal label.control-label {
+  max-width: 185px;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal #all-error-messages ul {
   list-style-type: none;
@@ -940,6 +1052,18 @@ section#content div#main #bootstrap-wrapper .form-horizontal .help-block-styles 
   margin: 5px 0px 0px 0px !important;
   padding: 0px 6px;
 }
+section#content div#main #bootstrap-wrapper .form-horizontal .tooltip {
+  min-width: 200px;
+  height: 100%;
+  min-height: 30px;
+  top: 0px !important;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal .tooltip .tooltip-arrow {
+  top: 8px;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal .tooltip .tooltip-inner {
+  background-color: #003466;
+}
 section#content div#main #bootstrap-wrapper .form-horizontal .help-block {
   padding: 10px 35px 10px 15px;
   margin-bottom: 20px;
@@ -965,6 +1089,11 @@ section#content div#main #bootstrap-wrapper .form-horizontal .help-block a:hover
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .form-group {
+  margin-bottom: 7px;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal .form-group,
+section#content div#main #bootstrap-wrapper .form-horizontal h4,
+section#content div#main #bootstrap-wrapper .form-horizontal p {
   clear: both;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .form-group.error {

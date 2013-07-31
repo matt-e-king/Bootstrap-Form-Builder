@@ -1,4 +1,4 @@
-@dark-grey: #695F5E;
+
 
 /*html {
   font-family: sans-serif;
@@ -76,110 +76,135 @@ section#content div#main #bootstrap-wrapper {
 
   .form-horizontal {
 
-    .input-block {
-      padding-left:5px;
-    }
+      .input-block {
+        padding-left:5px;
+      }
 
-    #all-error-messages {
-      ul {
-        list-style-type: none;
-        margin:0px;
-        padding:0px;
+      .btn-default {
+        background-color:@nau-blue;
+      }
+
+      label.control-label {
+        max-width:185px;
+      }
+
+      #all-error-messages {
+        ul {
+          list-style-type: none;
+          margin:0px;
+          padding:0px;
+          height:100%;
+          width:100%;
+        }
+        a:hover {
+            text-decoration:none;
+            opacity:0.7;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+        }
+      }
+
+      .checkbox,.radio, .radio-inline, .checkbox-inline {
+        margin-top:5px !important;
+      }
+
+      .control-label {
+        padding-right:5px;
+        padding-top:5px;
+      }
+
+      label {
+        font-weight:normal;
+      }
+
+      .form-control {
+        height:30px;
+        padding:3px 6px;
+      }
+
+      textarea.form-control {
+        height:85px;
+      }
+
+      input[type=submit] {
+        margin-left:-10px;
+      }
+
+      .help-block-styles {
+        font-size:.88em;
+        margin:5px 0px 0px 0px !important;
+        padding:0px 6px;
+      }
+
+      .tooltip {
+        min-width:200px;
         height:100%;
-        width:100%;
+        min-height:30px;
+        top:0px !important;
+        .tooltip-arrow {
+          top:8px;
+        }
+        .tooltip-inner {
+          background-color:#003466;
+        }
       }
-      a:hover {
-          text-decoration:none;
-          opacity:0.7;
-          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-      }
-    }
 
-    .checkbox,.radio, .radio-inline, .checkbox-inline {
-      margin-top:5px !important;
-    }
-
-    .control-label {
-      padding-right:5px;
-      padding-top:5px;
-    }
-
-    label {
-      font-weight:normal;
-    }
-
-    .form-control {
-      height:30px;
-      padding:3px 6px;
-    }
-
-    textarea.form-control {
-      height:85px;
-    }
-
-    input[type=submit] {
-      margin-left:-10px;
-    }
-
-    .help-block-styles {
-      font-size:.88em;
-      margin:5px 0px 0px 0px !important;
-      padding:0px 6px;
-    }
-
-    .help-block {
-      .alert;
-      .alert-danger;
-      .help-block-styles;
-      ul {
-        list-style-type: none;
-        margin:0px;
-        padding:3px;
-      }
-      a:hover {
-          text-decoration:none;
-          opacity:0.7;
-          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-      } 
-    }
-
-    .form-group {
-      clear:both;
-    }
-
-    .form-group.error {
-      border:none;
-      padding:0px;
       .help-block {
         .alert;
         .alert-danger;
         .help-block-styles;
         ul {
-          list-style:none;
-          list-style-type:none;
-          width:100%;
-        }
-        li {
-          padding:0px;
+          list-style-type: none;
           margin:0px;
+          padding:3px;
+        }
+        a:hover {
+            text-decoration:none;
+            opacity:0.7;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+        } 
+      }
+
+      .form-group {
+        margin-bottom:7px;
+      }
+
+      .form-group,h4,p {
+        clear:both;
+      }
+
+      .form-group.error {
+        border:none;
+        padding:0px;
+        .help-block {
+          .alert;
+          .alert-danger;
+          .help-block-styles;
+          ul {
+            list-style:none;
+            list-style-type:none;
+            width:100%;
+          }
+          li {
+            padding:0px;
+            margin:0px;
+          }
         }
       }
-    }
 
-    .form-group.warning {
-      .help-block {
-        .alert;
-        .help-block-styles;
+      .form-group.warning {
+        .help-block {
+          .alert;
+          .help-block-styles;
+        }
       }
-    }
 
-    .form-group.success {
-      .help-block {
-        .alert;
-        .alert-success;
-        .help-block-styles;
+      .form-group.success {
+        .help-block {
+          .alert;
+          .alert-success;
+          .help-block-styles;
+        }
       }
-    }
 
   }
   
