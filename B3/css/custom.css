@@ -26,6 +26,10 @@ div#main div.form select {
   width: 100% !important;
   top: 0px;
 }
+div.design_choices {
+  background-color: transparent;
+  padding: 0px;
+}
 section#content div#main #bootstrap-wrapper {
   /*width:470px;*/
 
@@ -992,6 +996,9 @@ section#content div#main #bootstrap-wrapper ul {
   list-style-type: none;
   list-style: none;
 }
+section#content div#main #bootstrap-wrapper p {
+  margin: 0 0 5px;
+}
 section#content div#main #bootstrap-wrapper p.header-sub {
   margin-top: -10px;
 }
@@ -1005,12 +1012,16 @@ section#content div#main #bootstrap-wrapper .access-hide {
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .input-block {
   padding-left: 5px;
+  max-width: 470px;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal .input-block.full {
+  padding-left: 0px;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .btn-default {
   background-color: #003466;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal label.control-label {
-  max-width: 185px;
+  max-width: 175px;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal #all-error-messages ul {
   list-style-type: none;
@@ -1029,6 +1040,11 @@ section#content div#main #bootstrap-wrapper .form-horizontal .radio,
 section#content div#main #bootstrap-wrapper .form-horizontal .radio-inline,
 section#content div#main #bootstrap-wrapper .form-horizontal .checkbox-inline {
   margin-top: 5px !important;
+  margin-right: 5px;
+}
+section#content div#main #bootstrap-wrapper .form-horizontal label.radio-inline,
+section#content div#main #bootstrap-wrapper .form-horizontal label.checkbox-inline {
+  line-height: 22px;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .control-label {
   padding-right: 5px;
@@ -1055,7 +1071,7 @@ section#content div#main #bootstrap-wrapper .form-horizontal .help-block-styles 
 section#content div#main #bootstrap-wrapper .form-horizontal .tooltip {
   min-width: 200px;
   height: 100%;
-  min-height: 30px;
+  min-height: 75px;
   top: 0px !important;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .tooltip .tooltip-arrow {
@@ -1089,7 +1105,8 @@ section#content div#main #bootstrap-wrapper .form-horizontal .help-block a:hover
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .form-group {
-  margin-bottom: 7px;
+  margin-bottom: 10px;
+  margin-left: 0px;
 }
 section#content div#main #bootstrap-wrapper .form-horizontal .form-group,
 section#content div#main #bootstrap-wrapper .form-horizontal h4,

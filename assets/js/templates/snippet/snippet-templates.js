@@ -15,6 +15,8 @@ define(function(require) {
   , space                    = require('text!templates/snippet/space.html')
   , subheading               = require('text!templates/snippet/subheading.html')
   , subheadingwithparagraph  = require('text!templates/snippet/subheadingwithparagraph.html')
+  , fulltextarea             = require('text!templates/snippet/fulltextarea.html')
+  , fulltextinput             = require('text!templates/snippet/fulltextinput.html')
   , textarea                 = require('text!templates/snippet/textarea.html')
   , textinput                = require('text!templates/snippet/textinput.html');
 
@@ -35,6 +37,8 @@ define(function(require) {
     , space                    : space
     , subheading               : subheading
     , subheadingwithparagraph  : subheadingwithparagraph
+    , fulltextarea             : fulltextarea
+    , fulltextinput             : fulltextinput
     , textarea                 : textarea
     , textinput                : textinput
   }

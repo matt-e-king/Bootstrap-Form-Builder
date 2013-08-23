@@ -14,8 +14,12 @@ body {
   min-height: 500px;
 }
 
+#drag-drop-components.affix {
+  top:60px;
+  left:745px;
+}
+
 #target fieldset {
-  border: 1px solid #ccc;
   min-height: 200px;
   padding: 5px;
   padding-bottom: 30px;
@@ -35,6 +39,7 @@ textarea {
 
 .popover {
   z-index:2000;
+  width:276px;
 }
 
 .popover .control-group {
@@ -115,20 +120,225 @@ form .popover form {
 }
 
 
+#target fieldset {
+  max-width:480px;
+  margin-left:5%;
+}
+
+#target {
+  border: 1px solid #ccc;
+}
 
 
 
 
+#build, #components-parent {
 
-#build{
 
-  @dark-grey: #695F5E;
+  @import "bootstrap.less";
+
+  h3 {
+    margin-top:0px;
+  }
+
+  /*width:470px;*/
+
+  /* @group Overriding NAU Styles */
+
+  select, textarea, input {
+    float:none;
+    max-width:none;
+    font-size:12px !important;
+  }
+
+  div {
+    margin-top:0px !important;
+  }
+
+  li {
+    margin:0px;
+  }
+
+  ul {
+    list-style-type: none;
+    list-style: none;
+  }
+
+  p {
+    margin:0 0 5px;
+  }
+
+  /* @end */
+
+  p.header-sub {
+    margin-top:-10px;
+  }
+
+  .access-hide {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    overflow: hidden;
+    height:0px;
+    margin-bottom:0px;
+  }
+
+  .form-horizontal {
+
+      .input-block {
+        padding-left:5px;
+        max-width:470px;
+      }
+
+      .btn-default {
+        background-color:@nau-blue;
+        background-image:transparent !important;
+      }
+
+      .btn {
+        background-image:transparent;
+        background-image:none !important;
+      }
+
+      label.control-label {
+        max-width:175px;
+      }
+
+      #all-error-messages {
+        ul {
+          list-style-type: none;
+          margin:0px;
+          padding:0px;
+          height:100%;
+          width:100%;
+        }
+        a:hover {
+            text-decoration:none;
+            opacity:0.7;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+        }
+      }
+
+      .checkbox,.radio, .radio-inline, .checkbox-inline {
+        margin-top:5px !important;
+        margin-right:5px;
+      }
+
+      label.radio-inline, label.checkbox-inline {
+        line-height:22px;
+      }
+
+      .control-label {
+        padding-right:5px;
+        padding-top:5px;
+      }
+
+      label {
+        font-weight:normal;
+      }
+
+      .form-control {
+        height:30px;
+        padding:3px 6px;
+      }
+
+      textarea.form-control {
+        height:85px;
+      }
+
+      input[type=submit] {
+        margin-left:-10px;
+      }
+
+      .help-block-styles {
+        font-size:.88em;
+        margin:5px 0px 0px 0px !important;
+        padding:0px 6px;
+      }
+
+      .tooltip {
+        min-width:200px;
+        height:100%;
+        min-height:75px;
+        top:0px !important;
+        .tooltip-arrow {
+          top:8px;
+        }
+        .tooltip-inner {
+          background-color:#003466;
+        }
+      }
+
+      .help-block {
+        .alert;
+        .alert-danger;
+        .help-block-styles;
+        ul {
+          list-style-type: none;
+          margin:0px;
+          padding:3px;
+        }
+        a:hover {
+            text-decoration:none;
+            opacity:0.7;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+        } 
+      }
+
+      .form-group {
+        margin-bottom:10px;
+        margin-left:0px;
+      }
+
+      .form-group,h4,p {
+        clear:both;
+      }
+
+      .form-group.error {
+        border:none;
+        padding:0px;
+        .help-block {
+          .alert;
+          .alert-danger;
+          .help-block-styles;
+          ul {
+            list-style:none;
+            list-style-type:none;
+            width:100%;
+          }
+          li {
+            padding:0px;
+            margin:0px;
+          }
+        }
+      }
+
+      .form-group.warning {
+        .help-block {
+          .alert;
+          .help-block-styles;
+        }
+      }
+
+      .form-group.success {
+        .help-block {
+          .alert;
+          .alert-success;
+          .help-block-styles;
+        }
+      }
+
+  }
+
+
+
+  /* Bootstrap 2 Styles */
+
+  /*@dark-grey: #695F5E;
 
   font-family:'Lucida Sans', sans-serif;
 
   font-size:1em;
-
-  /* @group Overriding NAU Styles */
 
   div {
     margin-top:0px !important;
@@ -137,8 +347,6 @@ form .popover form {
   .form-horizontal select {
     width:80% !important;
   }
-
-  /* @end */
 
   .access-hide {
     position: absolute;
@@ -221,160 +429,7 @@ form .popover form {
       margin:0px 0px 0px 5px !important;
     }
 
-  }
-
-
-  .form-inline {
-
-    .controls-row [class*="span"] {
-
-      textarea,
-      select,
-      input[type="text"],
-      input[type="password"],
-      input[type="datetime"],
-      input[type="datetime-local"],
-      input[type="date"],
-      input[type="month"],
-      input[type="time"],
-      input[type="week"],
-      input[type="number"],
-      input[type="email"],
-      input[type="url"],
-      input[type="search"],
-      input[type="tel"],
-      input[type="color"],
-      .uneditable-input {
-        width: 100%;
-        *width: 99.94680851063829%;
-        display:inline-block;
-        float:left;
-        margin-left:0px;
-        -webkit-box-sizing:border-box;
-        -o-box-sizing:border-box;
-        -moz-box-sizing:border-box;
-        box-sizing:border-box;
-        min-height:30px;
-      }
-
-    }
-
-    .columns-span4 {
-      width: 31.914893617021278%;
-      *width: 31.861702127659576%;
-    }
-
-    .columns-span3 {
-      width: 23.404255319148934%;
-        *width: 23.351063829787233%;
-    }
-
-    .controls-row {
-      margin-bottom:10px;
-
-      .checkbox.span4,
-      .radio.span4 {
-        .columns-span4;
-        margin-left:1% !important;
-      }
-
-      .checkbox.span3,
-      .radio.span3 {
-        .columns-span3;
-        margin-left:1% !important;
-      }
-    }
-
-    textarea,
-    select,
-    input[type="text"],
-    input[type="password"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="date"],
-    input[type="month"],
-    input[type="time"],
-    input[type="week"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="color"],
-    .uneditable-input {
-      margin-bottom:0px;
-    }
-
-    .help-block {
-      font-size:.88em;
-      margin:-10px 0px 0px 5px;
-    }
-
-    @media (max-width: 767px) {
-
-      textarea,
-      select,
-      input[type="text"],
-      input[type="password"],
-      input[type="datetime"],
-      input[type="datetime-local"],
-      input[type="date"],
-      input[type="month"],
-      input[type="time"],
-      input[type="week"],
-      input[type="number"],
-      input[type="email"],
-      input[type="url"],
-      input[type="search"],
-      input[type="tel"],
-      input[type="color"],
-      .uneditable-input {
-        margin-bottom:10px;
-        margin-left:0% !important;
-      }
-
-      .controls-row {
-        margin-bottom:0px;
-        [class*="span"] + [class*="span"] {
-          margin-left:0% !important;
-        }
-      }
-
-      .help-block {
-        font-size:.88em;
-        margin:0px 0px 10px 0px;
-      }
-      
-
-    }
-
-
-  }
-
-  @media (max-width: 480px) {
-    margin:50px 0px 0px 0px;
-    width:100% !important;
-
-    textarea,
-    select,
-    input[type="text"],
-    input[type="password"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="date"],
-    input[type="month"],
-    input[type="time"],
-    input[type="week"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="color"],
-    .uneditable-input {
-      width:95% !important;
-    }
-  }
+  }*/
 
 }
 

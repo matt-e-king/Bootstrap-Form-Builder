@@ -1,12 +1,11 @@
 [
   {
     "title": "Text input",
-    "render" : true,
     "fields": {
       "id": {
         "label": "ID / Name (unique)",
         "type": "input",
-        "value": "textinput"
+        "value": "textInput"
       },
       "label": {
         "label": "Label Text",
@@ -16,20 +15,20 @@
       "placeholder": {
         "label": "Placeholder",
         "type": "input",
-        "value": "placeholder"
+        "value": "Placeholder"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
       },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
-        "value": "e.g First Name is Required"
+        "value": "This field is Required"
       },
       "required": {
         "label": "Required",
-        "type": "checkbox",
-        "value": false
-      },
-      "hidelabel": {
-        "label": "Hide Label",
         "type": "checkbox",
         "value": false
       }
@@ -37,7 +36,6 @@
   },
   {
     "title": "Email field",
-    "render" : true,
     "fields": {
       "id": {
         "label": "ID / Name (unique)",
@@ -52,28 +50,27 @@
       "placeholder": {
         "label": "Placeholder",
         "type": "input",
-        "value": "Email Address"
+        "value": "Placeholder"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
       },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
-        "value": "Email Address is Required"
+        "value": "Email address is required"
       },
       "required": {
         "label": "Required",
         "type": "checkbox",
         "value": true
-      },
-      "hidelabel": {
-        "label": "Hide Label",
-        "type": "checkbox",
-        "value": false
       }
     }
   },
   {
     "title": "Text Area",
-    "render" : true,
     "fields": {
       "id": {
         "label": "ID / Name (unique)",
@@ -88,12 +85,17 @@
       "textarea": {
         "label": "Starting Text",
         "type": "textarea",
-        "value": "default text"
+        "value": "Type here..."
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
       },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
-        "value": "e.g Please describe dietary restrictions"
+        "value": "This field is required"
       },
       "required": {
         "label": "Required",
@@ -104,7 +106,6 @@
   },
   {
     "title": "Select Basic",
-    "render" : true,
     "fields": {
       "id": {
         "label": "ID / Name (unique)",
@@ -129,18 +130,18 @@
           "Option two"
         ]
       },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
-        "value": "e.g. Please select a State"
+        "value": "Please make a selection"
       },
       "required": {
         "label": "Required",
-        "type": "checkbox",
-        "value": false
-      },
-      "hidelabel": {
-        "label": "Hide Label",
         "type": "checkbox",
         "value": false
       }
@@ -165,6 +166,11 @@
         "type": "input",
         "value": "DD/MM/YYYY"
       },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
       "requiredmessage": {
         "label": "Required Message",
         "type": "input",
@@ -174,17 +180,11 @@
         "label": "Required",
         "type": "checkbox",
         "value": false
-      },
-      "hidelabel": {
-        "label": "Hide Label",
-        "type": "checkbox",
-        "value": false
       }
     }
   },
   {
     "title": "Multiple Radios",
-    "render" : true,
     "fields": {
       "name": {
         "label": "Group Name",
@@ -223,7 +223,6 @@
   },
   {
     "title": "Multiple Radios Inline",
-    "render" : true,
     "fields": {
       "name": {
         "label": "Group Name",
@@ -263,7 +262,6 @@
   },
   {
     "title": "Multiple Checkboxes",
-    "render" : true,
     "fields": {
       "name": {
         "label": "Group Name",
@@ -292,7 +290,6 @@
   },
   {
     "title": "Multiple Checkboxes Inline",
-    "render" : true,
     "fields": {
       "name": {
         "label": "Group Name",
@@ -322,7 +319,6 @@
   },
   {
     "title": "Confirmation Checkbox",
-    "render" : true,
     "fields": {
       "name": {
         "label": "ID / Name (unique)",

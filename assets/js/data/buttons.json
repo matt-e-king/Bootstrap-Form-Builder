@@ -7,12 +7,12 @@
       "id": {
         "label": "ID / Name",
         "type": "input",
-        "value": "singlebutton"
+        "value": "submit"
       },
       "label": {
         "label": "Label Text",
         "type": "input",
-        "value": "Submit Button"
+        "value": "Submit"
       },
       "buttonlabel": {
         "label": "Button Label",

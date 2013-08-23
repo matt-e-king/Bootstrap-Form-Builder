@@ -6,9 +6,9 @@ $(document).ready(function() {
 
 </script>
 
-<div class="form-group">
+<div class="form-group" <% if(helptext != "") { %>data-toggle="tooltip"<% } %>>
 	<label for="dateInput" class="col-lg-4 control-label"><%= label %></label>
 	<div class="col-lg-8 input-block">
-		<input type="text" class="form-control" name="<%= id %>" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<%= label %>" placeholder="<%= placeholder %>" <% if(required) {%>required="required" data-validation-required-message="<%= requiredmessage %>" <% } %>/>
+		<input type="text" class="form-control" name="<%= id %>" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<% if(helptext != "") {%><%= helptext %><% } else { %><%= label %><% } %>" placeholder="<%= placeholder %>" <% if(required) {%>required="required" data-validation-required-message="<%= requiredmessage %>" <% } %>/>
 	</div>
 </div>

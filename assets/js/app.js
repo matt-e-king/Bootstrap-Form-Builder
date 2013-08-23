@@ -2,13 +2,13 @@ define([
        "jquery" , "underscore" , "backbone"
        , "collections/snippets" , "collections/my-form-snippets"
        , "views/tab" , "views/my-form"
-       , "text!data/fields.json", "text!data/formatting.json","text!data/buttons.json"
+       , "text!data/fields.json", "text!data/formatting.json","text!data/special.json","text!data/buttons.json"
        , "text!templates/app/render.html",  "text!templates/app/about.html", 
 ], function(
   $, _, Backbone
   , SnippetsCollection, MyFormSnippetsCollection
   , TabView, MyFormView
-  , fieldsJSON, formattingJSON, buttonsJSON
+  , fieldsJSON, formattingJSON, specialJSON, buttonsJSON
   , renderTab, aboutTab
 ){
   return {
@@ -26,6 +26,10 @@ define([
         , collection: new SnippetsCollection(JSON.parse(formattingJSON))
       });
       new TabView({
+        title: "Special"
+        , collection: new SnippetsCollection(JSON.parse(specialJSON))
+      });
+      new TabView({
         title: "Buttons"
         , collection: new SnippetsCollection(JSON.parse(buttonsJSON))
       });
@@ -38,7 +42,11 @@ define([
         , content: aboutTab
       });*/
 
-
+      $('#drag-drop-components').affix({
+        offset: {
+          top: 125
+        }
+      });
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");

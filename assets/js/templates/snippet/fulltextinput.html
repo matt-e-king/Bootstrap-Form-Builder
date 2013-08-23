@@ -1,6 +1,6 @@
 <div class="form-group" <% if(helptext != "") { %>data-toggle="tooltip"<% } %>>
-	<label for="<%= id %>" class="col-lg-4 control-label"><%= label %></label>
-	<div class="col-lg-8 input-block">
+	<label for="<%= id %>" class="access-hide control-label"><%= label %></label>
+	<div class="input-block full">
 		<input type="text" name="<%= id %>" class="form-control" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<% if(helptext != "") {%><%= helptext %><% } else { %><%= label %><% } %>" placeholder="<%= placeholder %>" <% if(required) {%>required="required" data-validation-required-message="<%= requiredmessage %>" <% } %>/>
 	</div>
 </div>
