@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap Form Builder</title>
+    <title>Norther Airzona University - Bootstrap Form Builder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -21,15 +21,23 @@
   </head>
 
   <body>
-    <a href="https://github.com/minikomi/Bootstrap-Form-Builder/"><img style="z-index: 100000; position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
     <div class="navbar navbar-fixed-top">
+
       <div class="navbar-inner">
+
         <div class="container">
-          <a class="brand" href="#">Bootstrap Form Builder</a>
+          <a class="brand" href="#">
+            <img src="assets/img/small_web_logo.png" alt="Northern Arizona Univerity" width="100"/>
+            Bootstrap Form Builder
+          </a>
         </div>
       </div>
     </div>
+
     <div class="container">
+      <div class="alert alert-success" style="margin-top:20px;">
+        <h4>Welcome to the new Form Builder!!</h4>
+      </div>
       <div class="row clearfix">
         <!-- Building Form. -->
         <div class="span6">
@@ -45,20 +53,22 @@
         <!-- / Building Form. -->
 
         <!-- Components -->
-        <div class="span6">
+        <div id="drag-drop-components" class="span6 affix-top">
           <h2>Drag & Drop components</h2>
           <hr>
           <div class="tabbable">
             <ul class="nav nav-tabs" id="navtab">
               <!-- Tab nav -->
             </ul>
-            <form class="form-horizontal" id="components">
-              <fieldset>
-                <div class="tab-content">
-                  <!-- Tabs of snippets go here -->
-                </div>
-              </fieldset>
-            </form>
+            <div id="components-parent">
+              <form class="form-horizontal" id="components">
+                <fieldset>
+                  <div class="tab-content">
+                    <!-- Tabs of snippets go here -->
+                  </div>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </div>
         <!-- / Components -->
@@ -68,13 +78,12 @@
       <div class="row clearfix">
         <div class="span12">
           <hr>
-          By Adam Moore (<a href="http://twitter.com/minikomi" >@minikomi</a>).<br/>
-          Source on (<a href="https://github.com/minikomi/Bootstrap-Form-Builder" >Github</a>).
+
         </div>
       </div>
 
     </div> <!-- /container -->
-
-    <script data-main="assets/js/main-built.js" src="assets/js/lib/require.js" ></script>
+    <!-- pulling in requirejs and loading main.js as the brain of the application -->
+    <script data-main="assets/js/main.js" src="assets/js/lib/require.js"></script>
   </body>
 </html>

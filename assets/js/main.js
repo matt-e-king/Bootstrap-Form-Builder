@@ -1,3 +1,4 @@
+//this is the configuration of require.js
 require.config({
   baseUrl: "assets/js/lib/"
   , shim: {
@@ -23,6 +24,7 @@ require.config({
     , views       : "../views"
   }
 });
+//this loads app.js in the app directory and runs the initialize function
 require([ 'app/app'], function(app){
   app.initialize();
 });

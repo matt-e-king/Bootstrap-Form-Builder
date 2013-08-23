@@ -1,0 +1,203 @@
+div#main div.form label {
+	float:none;
+	clear:none;
+	margin-right:0px;
+	text-align:left;
+	width:inherit;
+	font-size:12px !important;
+}
+
+#bootstrap-wrapper {
+
+	@import "bootstrap.less";
+	@dark-grey: #695F5E;
+
+	font-family:'Lucida Sans', sans-serif;
+
+	font-size:1em;
+
+	/* @group Overriding NAU Styles */
+
+	select, textarea, input {
+		float:none;
+		max-width:none;
+		font-size:12px !important;
+	}
+
+	div {
+		margin-top:0px !important;
+	}
+
+	li {
+		margin:0px;
+	}
+
+	ul {
+		list-style-type: none;
+		list-style: none;
+	}
+
+	.form-horizontal select {
+		width:85% !important;
+	}
+
+	/* @end */
+
+	.access-hide {
+		position: absolute;
+		left: -9999px;
+		top: 0;
+		overflow: hidden;
+		height:0px;
+		margin-bottom:0px;
+	}
+
+	legend {
+		font-weight:bold;
+		margin-bottom:0px;
+	}
+
+	fieldset {
+		margin-bottom:20px;
+	}
+
+	h3 {
+		color:@dark-grey;
+		line-height:20px;
+	}
+
+	h4 {
+		color:@dark-grey;
+		margin-top:15px;
+	}
+
+	p.header-sub {
+		margin-top:-10px;
+	}	
+
+	.space {
+		padding:10px;
+	}
+
+	button[type=submit] {
+		margin-top:10px;
+	}
+
+	label {
+		margin-top:0px;
+	}
+
+	.form-horizontal {
+
+		textarea,
+		select,
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		.uneditable-input {
+			width:80%;
+		}
+
+		textarea {
+			height:75px;
+		}
+
+		.control-group {
+			margin-bottom:10px;
+		}
+
+		.control-label {
+			width:150px;
+		}
+
+		select {
+			margin-bottom:5px;
+		}
+
+		.controls {
+			margin-left:160px;
+			@media (max-width: 480px) {
+				margin-left:0px;
+			}
+		}
+
+		.help-block-styles {
+			font-size:.88em;
+			margin:5px 0px 0px 0px !important;
+			width:80%;
+			padding:0px 6px;
+		}
+
+		.radio {
+			padding-top:5px;
+		}
+
+		.help-block {
+			.alert;
+			.alert-error;
+			.help-block-styles;
+			ul {
+				list-style-type: none;
+				margin:0px;
+				padding:3px;
+			}
+			a:hover {
+					text-decoration:none;
+					opacity:0.7;
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+			}	
+		}
+
+		#all-error-messages {
+			ul {
+				list-style-type: none;
+				margin:0px;
+				padding:0px;
+				height:100%;
+				width:100%;
+			}
+			a:hover {
+					text-decoration:none;
+					opacity:0.7;
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+			}
+		}
+
+		.control-group.error {
+			border:none;
+			padding:0px;
+			.help-block {
+				.alert;
+				.alert-error;
+				.help-block-styles;
+				ul {
+					list-style:none;
+					list-style-type:none;
+					width:100%;
+				}
+				li {
+					padding:0px;
+					margin:0px;
+				}
+			}
+		}
+
+		.control-group.warning {
+			.help-block {
+				.alert;
+				.alert-block;
+				.help-block-styles;
+			}
+		}
+
+		.control-group.success {
+			.help-block {
+				.alert;
+				.alert-success;
+				.help-block-styles;
+			}
+		}
+
+	}
+
+}

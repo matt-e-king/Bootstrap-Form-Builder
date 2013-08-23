@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/jqBootstrapValidation.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<script>
+	  
+    $(function() {
+
+    	//global variable that is immediately define that the form hasn't been submitted
+    	var notSubmitted = true;
+
+        $("input,textarea,select").jqBootstrapValidation(
+            {
+                preventSubmit: true,
+                submitError: function($form, event, errors) {
+                    // Here I do nothing, but you could do something like display 
+                    // the error messages to the user, log, etc.  
+                  	
+                    //set an instance of the current scope to a variable called "that"
+                    var that = this;
+                    var errorList = "";
+                    var allErrorMessage = $('#all-error-messages');
+                    var errorHeader = '<h4>Your submission contained errors. Please review the following list:</h4><span class="access-hide">For JAWS screen reader users, press Insert F7 to get a list of links of required fields.</span>';
+
+                    //takes the argument "errors" and creates a list of links"
+                    for(var fieldName in errors) {
+                    	errorList += "<li><a href='"+fieldName+"'>"+errors[fieldName][0]+"</a></li>";
+                    }
+
+                    //iterates through this condition only the first time the form is submitted
+                    //this is so it doesn't reanimate when the user clicks "submit" a second time
+                    if(notSubmitted) {
+                    	allErrorMessage.hide().removeClass('access-hide');
+                        allErrorMessage.delay(200).slideDown().html('<div role="alert"><ul>' + errorHeader + errorList + '</ul></div>');
+                    }
+                    
+                    allErrorMessage.html('<div role="alert">' + errorHeader + "<ul>" + errorList + '</ul></div>');
+
+                    $('html, body').animate({
+		         			scrollTop: allErrorMessage.offset().top-500
+		     		}, 1000, function() {
+		     			$('#focus').delay(500).focus();
+		     		});
+
+                    $('#all-error-messages li a').on('click', function(e) {
+                    	e.preventDefault();
+                    	var field = $(this).attr('href');
+                    	//passes the value of the links href to a function called setFocus
+                    	that.setFocus(field);
+                    });
+
+                	notSubmitted = false;
+
+
+                },
+                submitSuccess: function($form, event) {
+                    event.preventDefault();
+                },
+                filter: function() {
+                    return $(this).is(":visible");
+                },
+
+                //this function changes focus to the cooresponding field when a error message is clicked on
+                setFocus: function(field) {
+                	$('[name='+field+']').focus();
+                	//console.log(field);
+                }
+            }
+        );
+    });
+        
+	</script>
+</head>
+<body>
+
+<div id="bootstrap-wrapper" style="margin-left:50px;">
+
+	<form class="valid-form form-horizontal" novalidate>
+
+		<fieldset>
+
+			<legend><h3>Horizontal Form</h3></legend>
+
+		</fieldset>
+
+		<input type="text" id="focus" class="access-hide"/>
+		<div id="all-error-messages" class="access-hide alert alert-error">
+			
+
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputFirstName">First Name</label>
+			<div class="controls">
+				<input type="text" id="firstName" name="firstName" placeholder="First Name" required data-validation-required-message="First Name is required."/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputLastName">Last Name</label>
+			<div class="controls">
+				<input type="text" id="lastName" name="lastName" placeholder="Last Name" required data-validation-required-message="Last Name is required."/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label access-hide" for="hiddenLabel">Hidden Label</label>
+			<div class="controls">
+				<input type="text" id="hiddenLabel" placeholder="Hidden Label" />
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">Email</label>
+			<div class="controls">
+				<input type="email" id="emailAddress" name="emailAddress" placeholder="Email" required data-validation-required-message="Email is required."/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">Password</label>
+			<div class="controls">
+				<input type="password" id="password" name="password" placeholder="Password" />
+			</div>
+		</div>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae volutpat tortor. Morbi auctor leo turpis, in vestibulum velit aliquam a. Aenean suscipit ullamcorper turpis a posuere. </p>
+
+		<div class="control-group">
+			<label class="control-label" for="selectTest">Select Box</label>
+			<div class="controls">
+				<select id="selectTest" name="selectTest" required data-validation-required-message="Please select an option in the select box.">
+					<option value="" selected="selected">-- Please Select an Option --</option>
+					<option value="Option 1">Option 1</option>
+					<option value="Option 2">Option 2</option>
+					<option value="Option 3">Option 3</option>
+					<option value="Option 4">Option 4</option>
+					<option value="Option 5">Option 5</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="textareaTest">Message</label>
+			<div class="controls">
+				<textarea id="textareaTest" name="textareaTest" placeholder="Please leave a message" rows="5" requried data-validation-required-message="Please leave us a nice message."></textarea>
+			</div>
+		</div>
+
+		<h4>Subheading</h4>
+		<p class="header-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae volutpat tortor. Morbi auctor leo turpis, in vestibulum.</p>
+
+		<div class="control-group">
+			<label class="control-label" for="checkboxes">Select All that apply:</label>
+			<div class="controls">
+				<label class="checkbox" for="checkboxes-0">
+					<input type="checkbox" name="checkboxes-test" id="checkboxes" value="Option one" />
+					Option one
+				</label>
+				<label class="checkbox" for="checkboxes-1">
+					<input type="checkbox" name="checkboxes-test" id="checkboxes-1" value="Option two" />
+					Option two
+				</label>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="radios">Please select an option:</label>
+			<div class="controls">
+				<label class="radio" for="radios-0">
+					<input type="radio" name="radios" id="radios" value="Option one" />
+					Option one
+				</label>
+				<label class="radio" for="radios-1">
+					<input type="radio" name="radios" id="radios-1" value="Option two" />
+					Option two
+				</label>
+				<label class="radio" for="radios-1">
+					<input type="radio" name="radios" id="radios-1" value="Option two" />
+					Option three
+				</label>
+			</div>
+		</div>		
+
+		<div class="control-group">
+			<label class="control-label" for="checkboxes">Pick your favorite food:</label>
+			<div class="controls">
+				<label class="checkbox inline" for="checkboxes-0">
+					<input type="checkbox" name="checkboxes" id="checkboxes-0" value="Option one" data-validation-minchecked-minchecked="2" data-validation-minchecked-message="You must select a favorite food."/>
+					1
+				</label>
+				<label class="checkbox inline" for="checkboxes-1">
+					<input type="checkbox" name="checkboxes" id="checkboxes-1" value="Option two" />
+					2
+				</label>
+				<label class="checkbox inline" for="checkboxes-1">
+					<input type="checkbox" name="checkboxes" id="checkboxes-1" value="Option two" />
+					3
+				</label>
+				<label class="checkbox inline" for="checkboxes-1">
+					<input type="checkbox" name="checkboxes" id="checkboxes-1" value="Option two" />
+					4
+				</label>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="radios1">Please select an option:</label>
+			<div class="controls">
+				<label class="radio inline" for="radios1-0">
+					<input type="radio" name="radios1" id="radios1-0" value="Option one" data-validation-minchecked-minchecked="1" data-validation-minchecked-message="You must select a radio button option."/>
+					1
+				</label>
+				<label class="radio inline" for="radios1-1">
+					<input type="radio" name="radios1" id="radios1-1" value="Option two" />
+					2
+				</label>
+				<label class="radio inline" for="radios1-1">
+					<input type="radio" name="radios1" id="radios1-1" value="Option two" />
+					3
+				</label>
+			</div>
+		</div>	
+
+		<div class="control-group">
+			<div class="controls">
+				<label class="checkbox">
+				<input type="checkbox" name="termsAgree" name="termsAgree" required data-validation-required-message="You must agree to the terms."/> Do you agree to these terms?
+				</label>
+			</div>
+		</div>
+
+		<button type="submit" class="btn">Sign in</button>
+
+	</form>
+
+
+	<form class="form-inline row-fluid">
+
+		<fieldset>
+
+			<legend>Inline Example</legend>
+
+		</fieldset>
+
+		<div class="controls controls-row">
+			<div class="span6">
+				<label class="access-hide">First Name</label>
+				<input type="text" placeholder="First Name" />
+			</div>
+
+			<div class="span6">
+				<label class="access-hide">First Name</label>
+				<input type="text" placeholder="First Name" />
+			</div>
+		</div>
+
+		<div class="controls controls-row">
+			<div class="span12">
+
+				<label class="access-hide">Address 1</label>
+				<input type="text" placeholder="Address 1" />
+
+			</div>
+		</div>
+
+		<div class="controls controls-row">
+			<div class="span12">
+				<label class="access-hide">Address 2</label>
+				<input type="text" placeholder="Address 2" />
+			</div>
+		</div>
+
+		<div class="controls controls-row">
+
+			<input class="span5" type="text" placeholder="City" />
+			<select class="span3">
+				<option value="AZ">AZ</option>
+				<option value="AZ">AZ</option>
+				<option value="AZ">AZ</option>
+				<option value="AZ">AZ</option>
+			</select>
+			<input class="span4" type="text" placeholder="ZIP" />
+
+		</div>
+
+		<div class="space"></div>
+
+		<h4>Subheading</h4>
+		<p class="header-sub">Lorem ipsum and some other garbage.</p>
+
+		<p><strong>Check all that apply:</strong></p>
+
+		<div class="controls controls-row">
+
+			<label class="checkbox span4">
+				<input type="checkbox" value="" />
+				Often
+			</label>
+
+			<label class="checkbox span4">
+				<input type="checkbox" value="" />
+				Sometimes
+			</label>
+
+			<label class="checkbox span4">
+				<input type="checkbox" value="" />
+				Occassionally
+			</label>
+
+		</div>
+
+		<div class="controls controls-row">
+
+			<label class="checkbox span4">
+				<input type="checkbox" value="" />
+				Often
+			</label>
+
+			<label class="checkbox span4">
+				<input type="checkbox" value="" />
+				Sometimes
+			</label>
+
+			<label class="checkbox span4">
+				<input type="checkbox" value="" />
+				Occassionally
+			</label>
+
+		</div>
+
+		<p><strong>Please select one:</strong></p>
+
+		<div class="controls controls-row">
+
+			<label class="radio span3">
+				<input name="selection2" type="radio" value="" />
+				Often
+			</label>
+
+			<label class="radio span3">
+				<input name="selection2" type="radio" value="" />
+				Sometimes
+			</label>
+
+			<label class="radio span3">
+				<input name="selection2" type="radio" value="" />
+				Occassionally
+			</label>
+
+			<label class="radio span3">
+				<input name="selection2" type="radio" value="" />
+				Occassionally
+			</label>
+
+		</div>
+
+		<div class="controls controls-row">
+
+			<label class="radio span3">
+				<input name="selection2" type="radio" value="" />
+				Often
+			</label>
+
+			<label class="radio span3">
+				<input name="selection2" type="radio" value="" />
+				Sometimes
+			</label>
+
+			<label class="radio span3">
+				<input name="selection2" type="radio" value="" />
+				Occassionally
+			</label>
+
+			<label class="radio span3">
+				<input name="selection2" type="radio" value="" />
+				Occassionally
+			</label>
+
+		</div>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae volutpat tortor. Morbi auctor leo turpis, in vestibulum velit aliquam a. Aenean suscipit ullamcorper turpis a posuere.
+		 </p>
+
+		 <p><strong>Please select one:</strong></p>
+
+		 <label class="radio span12">
+			<input name="selection3" type="radio" value="" />
+			Often
+		</label>
+
+		<label class="radio span12">
+			<input name="selection3" type="radio" value="" />
+			Sometimes
+		</label>
+
+		<label class="radio span12">
+			<input name="selection3" type="radio" value="" />
+			Occassionally
+		</label>
+
+		<label class="radio span12">
+			<input name="selection3" type="radio" value="" />
+			Kind of
+		</label>
+
+		<button type="submit" class="btn">Click to Submit</button>
+
+	</form>
+
+</div>
+
+
+<!--[if lt IE 10]>
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+		
+			$('#b-default label.access-hide').removeClass('access-hide');
+
+		});
+	
+	</script>
+<![endif]-->
+
+</body>
+</html>

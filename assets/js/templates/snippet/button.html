@@ -1,7 +1,7 @@
-<!-- Button -->
-<div class="control-group">
-  <label class="control-label" for="<%= id %>"><%= label %></label>
-  <div class="controls">
-    <button id="<%= id %>" name="<%= id %>" class='btn <%= buttontype %>'><%= buttonlabel %></button>
-  </div>
+<div class="form-group">
+  <label for="<%= id %>" class="col-lg-4 control-label"><%= label %></label>
+  <div class="col-lg-8">
+		<input type="submit" id="<%= id %>" name="<%= id %>" class="btn <%= buttontype %>" value="<%= buttonlabel %>"/>
+	</div>
 </div>
+

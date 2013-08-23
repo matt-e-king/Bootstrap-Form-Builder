@@ -1,0 +1,381 @@
+[
+  {
+    "title": "Text input",
+    "testing" : false,
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "textinput"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Text Inputs"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "placeholder"
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "e.g First Name is Required"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Email field",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "emailAddress"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Email Address"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "Email Address"
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Email Address is Required"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": true
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Text Area",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "textarea"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Text Area"
+      },
+      "textarea": {
+        "label": "Starting Text",
+        "type": "textarea",
+        "value": "default text"
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "e.g Please describe dietary restrictions"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Select Basic",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "selectbasic"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Select Basic"
+      },
+      "defaultoption": {
+        "label": "Default Option",
+        "type": "input",
+        "value": "-- Please Choose Option --"
+      },
+      "options": {
+        "label": "Options",
+        "type": "textarea-split",
+        "value": [
+          "Option one",
+          "Option two"
+        ]
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "e.g. Please select a State"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Date Field",
+    "render": true
+    , "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "date"
+      },
+      "label": {
+        "label": "Date Field",
+        "type": "input",
+        "value": "Date"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "DD/MM/YYYY"
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Please select a Date"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Multiple Radios",
+    "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "radios"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Multiple Radios"
+      },
+      "radios": {
+        "label": "Radios",
+        "type": "textarea-split",
+        "value": [
+          "Option one",
+          "Option two"
+        ]
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "e.g Please select a favorite food"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Multiple Radios Inline",
+    "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "radios"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Inline Radios"
+      },
+      "radios": {
+        "label": "Radios",
+        "type": "textarea-split",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "e.g Please select a favorite food"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Multiple Checkboxes",
+    "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "checkboxes"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Multiple Checkboxes"
+      },
+      "checkboxes": {
+        "label": "Checkboxes",
+        "type": "textarea-split",
+        "value": [
+          "Option one",
+          "Option two"
+        ]
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Please select minimum"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "minrequired": {
+        "label": "Minimum Selected",
+        "type": "input",
+        "value": "1"
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Multiple Checkboxes Inline",
+    "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "checkboxes"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Inline Checkboxes"
+      },
+      "checkboxes": {
+        "label": "Checkboxes",
+        "type": "textarea-split",
+        "value": [
+          1,
+          2,
+          3
+        ]
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Please select minimum"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "minrequired": {
+        "label": "Minimum Selected",
+        "type": "input",
+        "value": "1"
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Confirmation Checkbox",
+    "fields": {
+      "name": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "confirm"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Confirmation Checkbox"
+      },
+      "checkbox": {
+        "label": "Checkbox Text",
+        "type": "input",
+        "value": "I agree to the terms"
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "e.g. Please agree to our terms"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
+      "hidelabel": {
+        "label": "Hide Label",
+        "type": "checkbox",
+        "value": true
+      }
+    }
+  }
+]

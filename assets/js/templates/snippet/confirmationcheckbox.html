@@ -1,0 +1,11 @@
+<div class="form-group">
+	<label for="<%= name %>" class="col-lg-4 control-label"><span class="access-hide"><%= label %></span></label>
+	<div class="col-lg-8 input-block">
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" name="<%= name %>" id="<%= name %>" value="<%= checkbox %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= name %>" title="<%= label %>" ektdesignns_nodetype="element" <% if(required) {%>required="required" data-validation-required-message="<%= requiredmessage %>"<% } %>/>
+				<%= checkbox %>
+			</label>
+		</div>
+	</div>
+</div>

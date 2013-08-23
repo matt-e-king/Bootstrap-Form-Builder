@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Subheading",
+    "build": false,
+    "fields": {
+      "heading": {
+        "label": "Subheading",
+        "type": "input",
+        "value": "Subheading"
+      }
+    }
+  },
+  {
+    "title": "Subheading with paragraph",
+    "build": false,
+    "fields": {
+      "heading": {
+        "label": "Subheading",
+        "type": "input",
+        "value": "Subheading with paragraph"
+      },
+      "content": {
+        "label": "Content",
+        "type": "textarea",
+        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae volutpat tortor. "
+      }
+    }
+  },
+  {
+    "title": "Paragraph",
+    "build": true,
+    "fields": {
+      "content": {
+        "label": "Content",
+        "type": "textarea",
+        "value": "Drap and drop this element, and then edit me! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae volutpat tortor. Morbi auctor leo turpis, in vestibulum velit aliquam a. Aenean suscipit ullamcorper turpis a posuere."
+      },
+      "heading": {
+        "label": "Ignore",
+        "type": "ignore",
+        "value": "Paragraph Element"
+      }
+  	}
+  },
+  {
+    "title": "Space",
+    "build": true,
+    "fields": {
+      "padding": {
+        "label": "Padding",
+        "type": "input",
+        "value": 10
+      },
+      "heading": {
+        "label": "Ignore",
+        "type": "ignore",
+        "value": "Spacing Element"
+      }
+    }
+  }
+]

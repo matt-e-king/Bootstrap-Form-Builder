@@ -30,10 +30,12 @@ define([
       _.each(this.collection.renderAll(), function(snippet){
         that.$el.append(snippet);
       });
-      $("#render").val(that.renderForm({
-        text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
+      $("#render").html(that.renderForm({
+        text: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
       }));
       this.$el.appendTo("#build form");
+      //this removes any HTML from the snippet with a class of .descriptor
+      //$('#build form .descriptor').remove();
       this.delegateEvents();
     }
 
@@ -73,6 +75,7 @@ define([
     }
 
     , handleTempDrop: function(mouseEvent, model, index){
+      console.log(model);
       if(mouseEvent.pageX >= this.$build.position().left &&
          mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&
          mouseEvent.pageY >= this.$build.position().top &&

@@ -1,46 +1,47 @@
 body {
-  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  padding-top: 60px;
+  /* 60px to make the container go all the way to the bottom of the topbar */
+
   padding-bottom: 10px;
   position: relative;
 }
-
 @media (max-width: 979px) {
   body {
     padding-top: 0px;
   }
 }
-
 #components {
   min-height: 500px;
 }
-
+#drag-drop-components.affix {
+  top: 60px;
+  left: 745px;
+}
 #target fieldset {
-  border: 1px solid #ccc;
   min-height: 200px;
   padding: 5px;
   padding-bottom: 30px;
 }
-
 .component {
   cursor: pointer;
 }
-
 input {
   cursor: pointer;
 }
-
 textarea {
   resize: vertical;
 }
-
+.popover {
+  z-index: 2000;
+  width: 276px;
+}
 .popover .control-group {
   cursor: default;
 }
 .popover input {
   cursor: text;
 }
-
-.temp{
+.temp {
   width: 100%;
   height: 100%;
   background: transparent;
@@ -50,7 +51,6 @@ textarea {
   overflow-x: hidden;
   left: 0;
 }
-
 .temp form {
   padding: 8px 4px;
   border: 1px dotted #ccc;
@@ -60,51 +60,1744 @@ textarea {
   -webkit-transition: -webkit-transform 0.1s ease-out;
   overflow: hidden;
 }
-
-#render{
+#render {
   min-height: 500px;
   font-family: monospace;
 }
-
 /* Popovers now are appended to their parent rather
 than to the body/main document as they once were.
 We need to over-ride some inherited stuff.. */
 form .popover .controls {
-  margin-left: 0;
+  margin-left: 0 !important;
 }
-
 form .popover .control-label {
   text-align: left;
 }
-
 form .popover form {
   width: 224px;
 }
-
-.popover-content form .btn{
-  margin-right: 10px
+.popover-content form .btn {
+  margin-right: 10px;
 }
-
-.target:after{
-  float:left;
+.target:after {
+  float: left;
   content: " ";
-  height: 77px; 
+  height: 77px;
   margin-top: 3px;
   background: #f0f0f0;
   width: 100%;
   border: 1px dashed #ccc;
 }
-
-#target, #input, #radioscheckboxes, #select, #buttons {
- -webkit-touch-callout: none;
- -webkit-user-select: none;
- -khtml-user-select: none;
- -moz-user-select: none;
- -ms-user-select: none;
- user-select: none;
+#target,
+#input,
+#radioscheckboxes,
+#select,
+#buttons {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+#target fieldset {
+  width: 100%;
+  overflow: hidden;
+}
+#target fieldset {
+  max-width: 480px;
+  margin-left: 5%;
+}
+#target {
+  border: 1px solid #ccc;
+}
+#build,
+#components-parent {
+  /*width:470px;*/
 
-#target fieldset{
- width: 100%;
- overflow: hidden;
+  /* @group Overriding NAU Styles */
+
+  /* @end */
+
+  /* Bootstrap 2 Styles */
+
+  /*@dark-grey: #695F5E;
+
+  font-family:'Lucida Sans', sans-serif;
+
+  font-size:1em;
+
+  div {
+    margin-top:0px !important;
+  }
+
+  .form-horizontal select {
+    width:80% !important;
+  }
+
+  .access-hide {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    overflow: hidden;
+    height:0px;
+    margin-bottom:0px;
+  }
+
+  legend {
+    font-weight:bold;
+    margin-bottom:20px;
+  }
+
+  fieldset {
+    margin-bottom:0px;
+  }
+
+  h3 {
+    color:@dark-grey;
+    line-height:20px;
+  }
+
+  h4 {
+    color:@dark-grey;
+  }
+
+  p.header-sub {
+    margin-top:-10px;
+  } 
+
+  .space {
+    padding:10px;
+    border:1px dashed #ccc;
+    border-radius:5px;
+    margin-bottom:5px;
+  }
+
+  button[type=submit] {
+    margin-top:10px;
+  }
+
+  .form-horizontal {
+
+    textarea,
+    select,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input {
+      width:80%;
+    }
+
+    .control-group {
+      margin-bottom:10px;
+    }
+
+    .control-label {
+      width:140px;
+    }
+
+    .controls {
+      margin-left:160px;
+    }
+
+    .help-block {
+      font-size:.88em;
+      margin:0px 0px 0px 5px !important;
+    }
+
+  }*/
+
+}
+#build [hidden],
+#components-parent [hidden] {
+  display: none;
+}
+#build a:focus,
+#components-parent a:focus {
+  outline: thin dotted;
+}
+#build a:active,
+#components-parent a:active,
+#build a:hover,
+#components-parent a:hover {
+  outline: 0;
+}
+#build h1,
+#components-parent h1 {
+  margin: 0.67em 0;
+  font-size: 2em;
+}
+#build b,
+#components-parent b,
+#build strong,
+#components-parent strong {
+  font-weight: bold;
+}
+#build button,
+#components-parent button,
+#build input,
+#components-parent input,
+#build select,
+#components-parent select,
+#build textarea,
+#components-parent textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+}
+#build button,
+#components-parent button,
+#build input,
+#components-parent input {
+  line-height: normal;
+}
+#build button,
+#components-parent button,
+#build select,
+#components-parent select {
+  text-transform: none;
+}
+#build button,
+#components-parent button,
+#build html input[type="button"],
+#components-parent html input[type="button"],
+#build input[type="reset"],
+#components-parent input[type="reset"],
+#build input[type="submit"],
+#components-parent input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+#build button[disabled],
+#components-parent button[disabled],
+#build html input[disabled],
+#components-parent html input[disabled] {
+  cursor: default;
+}
+#build input[type="checkbox"],
+#components-parent input[type="checkbox"],
+#build input[type="radio"],
+#components-parent input[type="radio"] {
+  padding: 0;
+  box-sizing: border-box;
+}
+#build button::-moz-focus-inner,
+#components-parent button::-moz-focus-inner,
+#build input::-moz-focus-inner,
+#components-parent input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+#build textarea,
+#components-parent textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+#build *,
+#components-parent * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#build input,
+#components-parent input,
+#build button,
+#components-parent button,
+#build select,
+#components-parent select,
+#build textarea,
+#components-parent textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+#build a,
+#components-parent a {
+  color: #428bca;
+  text-decoration: none;
+}
+#build a:hover,
+#components-parent a:hover,
+#build a:focus,
+#components-parent a:focus {
+  color: #2a6496;
+  text-decoration: underline;
+}
+#build a:focus,
+#components-parent a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#build p,
+#components-parent p {
+  margin: 0 0 10px;
+}
+#build h1,
+#components-parent h1,
+#build h2,
+#components-parent h2,
+#build h3,
+#components-parent h3,
+#build h4,
+#components-parent h4,
+#build h5,
+#components-parent h5,
+#build h6,
+#components-parent h6,
+#build .h1,
+#components-parent .h1,
+#build .h2,
+#components-parent .h2,
+#build .h3,
+#components-parent .h3,
+#build .h4,
+#components-parent .h4,
+#build .h5,
+#components-parent .h5,
+#build .h6,
+#components-parent .h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+}
+#build h1 small,
+#components-parent h1 small,
+#build h2 small,
+#components-parent h2 small,
+#build h3 small,
+#components-parent h3 small,
+#build h4 small,
+#components-parent h4 small,
+#build h5 small,
+#components-parent h5 small,
+#build h6 small,
+#components-parent h6 small,
+#build .h1 small,
+#components-parent .h1 small,
+#build .h2 small,
+#components-parent .h2 small,
+#build .h3 small,
+#components-parent .h3 small,
+#build .h4 small,
+#components-parent .h4 small,
+#build .h5 small,
+#components-parent .h5 small,
+#build .h6 small,
+#components-parent .h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+#build h1,
+#components-parent h1,
+#build h2,
+#components-parent h2,
+#build h3,
+#components-parent h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#build h4,
+#components-parent h4,
+#build h5,
+#components-parent h5,
+#build h6,
+#components-parent h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#build h1,
+#components-parent h1,
+#build .h1,
+#components-parent .h1 {
+  font-size: 38px;
+}
+#build h2,
+#components-parent h2,
+#build .h2,
+#components-parent .h2 {
+  font-size: 32px;
+}
+#build h3,
+#components-parent h3,
+#build .h3,
+#components-parent .h3 {
+  font-size: 24px;
+}
+#build h4,
+#components-parent h4,
+#build .h4,
+#components-parent .h4 {
+  font-size: 18px;
+}
+#build h5,
+#components-parent h5,
+#build .h5,
+#components-parent .h5 {
+  font-size: 14px;
+}
+#build h6,
+#components-parent h6,
+#build .h6,
+#components-parent .h6 {
+  font-size: 12px;
+}
+#build h1 small,
+#components-parent h1 small,
+#build .h1 small,
+#components-parent .h1 small {
+  font-size: 24px;
+}
+#build h2 small,
+#components-parent h2 small,
+#build .h2 small,
+#components-parent .h2 small {
+  font-size: 18px;
+}
+#build h3 small,
+#components-parent h3 small,
+#build .h3 small,
+#components-parent .h3 small,
+#build h4 small,
+#components-parent h4 small,
+#build .h4 small,
+#components-parent .h4 small {
+  font-size: 14px;
+}
+#build ul,
+#components-parent ul,
+#build ol,
+#components-parent ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#build ul ul,
+#components-parent ul ul,
+#build ol ul,
+#components-parent ol ul,
+#build ul ol,
+#components-parent ul ol,
+#build ol ol,
+#components-parent ol ol {
+  margin-bottom: 0;
+}
+#build .col-1,
+#components-parent .col-1,
+#build .col-2,
+#components-parent .col-2,
+#build .col-3,
+#components-parent .col-3,
+#build .col-4,
+#components-parent .col-4,
+#build .col-5,
+#components-parent .col-5,
+#build .col-6,
+#components-parent .col-6,
+#build .col-7,
+#components-parent .col-7,
+#build .col-8,
+#components-parent .col-8,
+#build .col-9,
+#components-parent .col-9,
+#build .col-10,
+#components-parent .col-10,
+#build .col-11,
+#components-parent .col-11,
+#build .col-12,
+#components-parent .col-12,
+#build .col-sm-1,
+#components-parent .col-sm-1,
+#build .col-sm-2,
+#components-parent .col-sm-2,
+#build .col-sm-3,
+#components-parent .col-sm-3,
+#build .col-sm-4,
+#components-parent .col-sm-4,
+#build .col-sm-5,
+#components-parent .col-sm-5,
+#build .col-sm-6,
+#components-parent .col-sm-6,
+#build .col-sm-7,
+#components-parent .col-sm-7,
+#build .col-sm-8,
+#components-parent .col-sm-8,
+#build .col-sm-9,
+#components-parent .col-sm-9,
+#build .col-sm-10,
+#components-parent .col-sm-10,
+#build .col-sm-11,
+#components-parent .col-sm-11,
+#build .col-sm-12,
+#components-parent .col-sm-12,
+#build .col-lg-1,
+#components-parent .col-lg-1,
+#build .col-lg-2,
+#components-parent .col-lg-2,
+#build .col-lg-3,
+#components-parent .col-lg-3,
+#build .col-lg-4,
+#components-parent .col-lg-4,
+#build .col-lg-5,
+#components-parent .col-lg-5,
+#build .col-lg-6,
+#components-parent .col-lg-6,
+#build .col-lg-7,
+#components-parent .col-lg-7,
+#build .col-lg-8,
+#components-parent .col-lg-8,
+#build .col-lg-9,
+#components-parent .col-lg-9,
+#build .col-lg-10,
+#components-parent .col-lg-10,
+#build .col-lg-11,
+#components-parent .col-lg-11,
+#build .col-lg-12,
+#components-parent .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+#build .col-1,
+#components-parent .col-1,
+#build .col-2,
+#components-parent .col-2,
+#build .col-3,
+#components-parent .col-3,
+#build .col-4,
+#components-parent .col-4,
+#build .col-5,
+#components-parent .col-5,
+#build .col-6,
+#components-parent .col-6,
+#build .col-7,
+#components-parent .col-7,
+#build .col-8,
+#components-parent .col-8,
+#build .col-9,
+#components-parent .col-9,
+#build .col-10,
+#components-parent .col-10,
+#build .col-11,
+#components-parent .col-11,
+#build .col-12,
+#components-parent .col-12 {
+  float: left;
+}
+#build .col-1,
+#components-parent .col-1 {
+  width: 8.333333333333332%;
+}
+#build .col-2,
+#components-parent .col-2 {
+  width: 16.666666666666664%;
+}
+#build .col-3,
+#components-parent .col-3 {
+  width: 25%;
+}
+#build .col-4,
+#components-parent .col-4 {
+  width: 33.33333333333333%;
+}
+#build .col-5,
+#components-parent .col-5 {
+  width: 41.66666666666667%;
+}
+#build .col-6,
+#components-parent .col-6 {
+  width: 50%;
+}
+#build .col-7,
+#components-parent .col-7 {
+  width: 58.333333333333336%;
+}
+#build .col-8,
+#components-parent .col-8 {
+  width: 66.66666666666666%;
+}
+#build .col-9,
+#components-parent .col-9 {
+  width: 75%;
+}
+#build .col-10,
+#components-parent .col-10 {
+  width: 83.33333333333334%;
+}
+#build .col-11,
+#components-parent .col-11 {
+  width: 91.66666666666666%;
+}
+#build .col-12,
+#components-parent .col-12 {
+  width: 100%;
+}
+#build .col-lg-1,
+#components-parent .col-lg-1,
+#build .col-lg-2,
+#components-parent .col-lg-2,
+#build .col-lg-3,
+#components-parent .col-lg-3,
+#build .col-lg-4,
+#components-parent .col-lg-4,
+#build .col-lg-5,
+#components-parent .col-lg-5,
+#build .col-lg-6,
+#components-parent .col-lg-6,
+#build .col-lg-7,
+#components-parent .col-lg-7,
+#build .col-lg-8,
+#components-parent .col-lg-8,
+#build .col-lg-9,
+#components-parent .col-lg-9,
+#build .col-lg-10,
+#components-parent .col-lg-10,
+#build .col-lg-11,
+#components-parent .col-lg-11,
+#build .col-lg-12,
+#components-parent .col-lg-12 {
+  float: left;
+}
+#build .col-lg-1,
+#components-parent .col-lg-1 {
+  width: 8.333333333333332%;
+}
+#build .col-lg-2,
+#components-parent .col-lg-2 {
+  width: 16.666666666666664%;
+}
+#build .col-lg-3,
+#components-parent .col-lg-3 {
+  width: 25%;
+}
+#build .col-lg-4,
+#components-parent .col-lg-4 {
+  width: 33.33333333333333%;
+}
+#build .col-lg-5,
+#components-parent .col-lg-5 {
+  width: 41.66666666666667%;
+}
+#build .col-lg-6,
+#components-parent .col-lg-6 {
+  width: 50%;
+}
+#build .col-lg-7,
+#components-parent .col-lg-7 {
+  width: 58.333333333333336%;
+}
+#build .col-lg-8,
+#components-parent .col-lg-8 {
+  width: 66.66666666666666%;
+}
+#build .col-lg-9,
+#components-parent .col-lg-9 {
+  width: 75%;
+}
+#build .col-lg-10,
+#components-parent .col-lg-10 {
+  width: 83.33333333333334%;
+}
+#build .col-lg-11,
+#components-parent .col-lg-11 {
+  width: 91.66666666666666%;
+}
+#build .col-lg-12,
+#components-parent .col-lg-12 {
+  width: 100%;
+}
+#build .col-offset-1,
+#components-parent .col-offset-1 {
+  margin-left: 8.333333333333332%;
+}
+#build .col-offset-2,
+#components-parent .col-offset-2 {
+  margin-left: 16.666666666666664%;
+}
+#build .col-offset-3,
+#components-parent .col-offset-3 {
+  margin-left: 25%;
+}
+#build .col-offset-4,
+#components-parent .col-offset-4 {
+  margin-left: 33.33333333333333%;
+}
+#build .col-offset-5,
+#components-parent .col-offset-5 {
+  margin-left: 41.66666666666667%;
+}
+#build .col-offset-6,
+#components-parent .col-offset-6 {
+  margin-left: 50%;
+}
+#build .col-offset-7,
+#components-parent .col-offset-7 {
+  margin-left: 58.333333333333336%;
+}
+#build .col-offset-8,
+#components-parent .col-offset-8 {
+  margin-left: 66.66666666666666%;
+}
+#build .col-offset-9,
+#components-parent .col-offset-9 {
+  margin-left: 75%;
+}
+#build .col-offset-10,
+#components-parent .col-offset-10 {
+  margin-left: 83.33333333333334%;
+}
+#build .col-offset-11,
+#components-parent .col-offset-11 {
+  margin-left: 91.66666666666666%;
+}
+#build label,
+#components-parent label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+#build input[type="radio"],
+#components-parent input[type="radio"],
+#build input[type="checkbox"],
+#components-parent input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  /* IE8-9 */
+
+  line-height: normal;
+}
+#build input[type="file"],
+#components-parent input[type="file"] {
+  display: block;
+}
+#build select[multiple],
+#components-parent select[multiple],
+#build select[size],
+#components-parent select[size] {
+  height: auto;
+}
+#build select optgroup,
+#components-parent select optgroup {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+}
+#build input[type="file"]:focus,
+#components-parent input[type="file"]:focus,
+#build input[type="radio"]:focus,
+#components-parent input[type="radio"]:focus,
+#build input[type="checkbox"]:focus,
+#components-parent input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#build .form-control:-moz-placeholder,
+#components-parent .form-control:-moz-placeholder {
+  color: #999999;
+}
+#build .form-control::-moz-placeholder,
+#components-parent .form-control::-moz-placeholder {
+  color: #999999;
+}
+#build .form-control:-ms-input-placeholder,
+#components-parent .form-control:-ms-input-placeholder {
+  color: #999999;
+}
+#build .form-control::-webkit-input-placeholder,
+#components-parent .form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+#build .form-control,
+#components-parent .form-control {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+#build .form-control:focus,
+#components-parent .form-control:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+#build .form-control[disabled],
+#components-parent .form-control[disabled],
+#build .form-control[readonly],
+#components-parent .form-control[readonly],
+#build fieldset[disabled] .form-control,
+#components-parent fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+#build textarea.form-control,
+#components-parent textarea.form-control {
+  height: auto;
+}
+#build .form-group,
+#components-parent .form-group {
+  margin-bottom: 15px;
+}
+#build .radio,
+#components-parent .radio,
+#build .checkbox,
+#components-parent .checkbox {
+  display: block;
+  min-height: 20px;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+#build .radio label,
+#components-parent .radio label,
+#build .checkbox label,
+#components-parent .checkbox label {
+  display: inline;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+#build .radio input[type="radio"],
+#components-parent .radio input[type="radio"],
+#build .radio-inline input[type="radio"],
+#components-parent .radio-inline input[type="radio"],
+#build .checkbox input[type="checkbox"],
+#components-parent .checkbox input[type="checkbox"],
+#build .checkbox-inline input[type="checkbox"],
+#components-parent .checkbox-inline input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
+}
+#build .radio + .radio,
+#components-parent .radio + .radio,
+#build .checkbox + .checkbox,
+#components-parent .checkbox + .checkbox {
+  margin-top: -5px;
+}
+#build .radio-inline,
+#components-parent .radio-inline,
+#build .checkbox-inline,
+#components-parent .checkbox-inline {
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  vertical-align: middle;
+  cursor: pointer;
+}
+#build .radio-inline + .radio-inline,
+#components-parent .radio-inline + .radio-inline,
+#build .checkbox-inline + .checkbox-inline,
+#components-parent .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+#build .form-control.input-large,
+#components-parent .form-control.input-large {
+  height: 56px;
+  padding: 14px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+#build .form-control.input-small,
+#components-parent .form-control.input-small {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+#build select.input-large,
+#components-parent select.input-large {
+  height: 56px;
+  line-height: 56px;
+}
+#build select.input-small,
+#components-parent select.input-small {
+  height: 30px;
+  line-height: 30px;
+}
+#build .help-block,
+#components-parent .help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+#build .btn,
+#components-parent .btn {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+#build .btn:focus,
+#components-parent .btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#build .btn:hover,
+#components-parent .btn:hover,
+#build .btn:focus,
+#components-parent .btn:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+#build .btn:active,
+#components-parent .btn:active,
+#build .btn.active,
+#components-parent .btn.active {
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+#build .btn.disabled,
+#components-parent .btn.disabled,
+#build .btn[disabled],
+#components-parent .btn[disabled],
+#build fieldset[disabled] .btn,
+#components-parent fieldset[disabled] .btn {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#build .btn-default,
+#components-parent .btn-default {
+  color: #ffffff;
+  background-color: #474949;
+  border-color: #474949;
+}
+#build .btn-default:hover,
+#components-parent .btn-default:hover,
+#build .btn-default:focus,
+#components-parent .btn-default:focus,
+#build .btn-default:active,
+#components-parent .btn-default:active,
+#build .btn-default.active,
+#components-parent .btn-default.active {
+  background-color: #3a3c3c;
+  border-color: #2e2f2f;
+}
+#build .btn-default.disabled,
+#components-parent .btn-default.disabled,
+#build .btn-default[disabled],
+#components-parent .btn-default[disabled],
+#build fieldset[disabled] .btn-default,
+#components-parent fieldset[disabled] .btn-default,
+#build .btn-default.disabled:hover,
+#components-parent .btn-default.disabled:hover,
+#build .btn-default[disabled]:hover,
+#components-parent .btn-default[disabled]:hover,
+#build fieldset[disabled] .btn-default:hover,
+#components-parent fieldset[disabled] .btn-default:hover,
+#build .btn-default.disabled:focus,
+#components-parent .btn-default.disabled:focus,
+#build .btn-default[disabled]:focus,
+#components-parent .btn-default[disabled]:focus,
+#build fieldset[disabled] .btn-default:focus,
+#components-parent fieldset[disabled] .btn-default:focus,
+#build .btn-default.disabled:active,
+#components-parent .btn-default.disabled:active,
+#build .btn-default[disabled]:active,
+#components-parent .btn-default[disabled]:active,
+#build fieldset[disabled] .btn-default:active,
+#components-parent fieldset[disabled] .btn-default:active,
+#build .btn-default.disabled.active,
+#components-parent .btn-default.disabled.active,
+#build .btn-default[disabled].active,
+#components-parent .btn-default[disabled].active,
+#build fieldset[disabled] .btn-default.active,
+#components-parent fieldset[disabled] .btn-default.active {
+  background-color: #474949;
+  border-color: #474949;
+}
+#build .btn-primary,
+#components-parent .btn-primary {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+#build .btn-primary:hover,
+#components-parent .btn-primary:hover,
+#build .btn-primary:focus,
+#components-parent .btn-primary:focus,
+#build .btn-primary:active,
+#components-parent .btn-primary:active,
+#build .btn-primary.active,
+#components-parent .btn-primary.active {
+  background-color: #357ebd;
+  border-color: #3071a9;
+}
+#build .btn-primary.disabled,
+#components-parent .btn-primary.disabled,
+#build .btn-primary[disabled],
+#components-parent .btn-primary[disabled],
+#build fieldset[disabled] .btn-primary,
+#components-parent fieldset[disabled] .btn-primary,
+#build .btn-primary.disabled:hover,
+#components-parent .btn-primary.disabled:hover,
+#build .btn-primary[disabled]:hover,
+#components-parent .btn-primary[disabled]:hover,
+#build fieldset[disabled] .btn-primary:hover,
+#components-parent fieldset[disabled] .btn-primary:hover,
+#build .btn-primary.disabled:focus,
+#components-parent .btn-primary.disabled:focus,
+#build .btn-primary[disabled]:focus,
+#components-parent .btn-primary[disabled]:focus,
+#build fieldset[disabled] .btn-primary:focus,
+#components-parent fieldset[disabled] .btn-primary:focus,
+#build .btn-primary.disabled:active,
+#components-parent .btn-primary.disabled:active,
+#build .btn-primary[disabled]:active,
+#components-parent .btn-primary[disabled]:active,
+#build fieldset[disabled] .btn-primary:active,
+#components-parent fieldset[disabled] .btn-primary:active,
+#build .btn-primary.disabled.active,
+#components-parent .btn-primary.disabled.active,
+#build .btn-primary[disabled].active,
+#components-parent .btn-primary[disabled].active,
+#build fieldset[disabled] .btn-primary.active,
+#components-parent fieldset[disabled] .btn-primary.active {
+  background-color: #428bca;
+  border-color: #428bca;
+}
+#build .btn-warning,
+#components-parent .btn-warning {
+  color: #ffffff;
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+#build .btn-warning:hover,
+#components-parent .btn-warning:hover,
+#build .btn-warning:focus,
+#components-parent .btn-warning:focus,
+#build .btn-warning:active,
+#components-parent .btn-warning:active,
+#build .btn-warning.active,
+#components-parent .btn-warning.active {
+  background-color: #eea236;
+  border-color: #ec971f;
+}
+#build .btn-warning.disabled,
+#components-parent .btn-warning.disabled,
+#build .btn-warning[disabled],
+#components-parent .btn-warning[disabled],
+#build fieldset[disabled] .btn-warning,
+#components-parent fieldset[disabled] .btn-warning,
+#build .btn-warning.disabled:hover,
+#components-parent .btn-warning.disabled:hover,
+#build .btn-warning[disabled]:hover,
+#components-parent .btn-warning[disabled]:hover,
+#build fieldset[disabled] .btn-warning:hover,
+#components-parent fieldset[disabled] .btn-warning:hover,
+#build .btn-warning.disabled:focus,
+#components-parent .btn-warning.disabled:focus,
+#build .btn-warning[disabled]:focus,
+#components-parent .btn-warning[disabled]:focus,
+#build fieldset[disabled] .btn-warning:focus,
+#components-parent fieldset[disabled] .btn-warning:focus,
+#build .btn-warning.disabled:active,
+#components-parent .btn-warning.disabled:active,
+#build .btn-warning[disabled]:active,
+#components-parent .btn-warning[disabled]:active,
+#build fieldset[disabled] .btn-warning:active,
+#components-parent fieldset[disabled] .btn-warning:active,
+#build .btn-warning.disabled.active,
+#components-parent .btn-warning.disabled.active,
+#build .btn-warning[disabled].active,
+#components-parent .btn-warning[disabled].active,
+#build fieldset[disabled] .btn-warning.active,
+#components-parent fieldset[disabled] .btn-warning.active {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+#build .btn-danger,
+#components-parent .btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+#build .btn-danger:hover,
+#components-parent .btn-danger:hover,
+#build .btn-danger:focus,
+#components-parent .btn-danger:focus,
+#build .btn-danger:active,
+#components-parent .btn-danger:active,
+#build .btn-danger.active,
+#components-parent .btn-danger.active {
+  background-color: #d43f3a;
+  border-color: #c9302c;
+}
+#build .btn-danger.disabled,
+#components-parent .btn-danger.disabled,
+#build .btn-danger[disabled],
+#components-parent .btn-danger[disabled],
+#build fieldset[disabled] .btn-danger,
+#components-parent fieldset[disabled] .btn-danger,
+#build .btn-danger.disabled:hover,
+#components-parent .btn-danger.disabled:hover,
+#build .btn-danger[disabled]:hover,
+#components-parent .btn-danger[disabled]:hover,
+#build fieldset[disabled] .btn-danger:hover,
+#components-parent fieldset[disabled] .btn-danger:hover,
+#build .btn-danger.disabled:focus,
+#components-parent .btn-danger.disabled:focus,
+#build .btn-danger[disabled]:focus,
+#components-parent .btn-danger[disabled]:focus,
+#build fieldset[disabled] .btn-danger:focus,
+#components-parent fieldset[disabled] .btn-danger:focus,
+#build .btn-danger.disabled:active,
+#components-parent .btn-danger.disabled:active,
+#build .btn-danger[disabled]:active,
+#components-parent .btn-danger[disabled]:active,
+#build fieldset[disabled] .btn-danger:active,
+#components-parent fieldset[disabled] .btn-danger:active,
+#build .btn-danger.disabled.active,
+#components-parent .btn-danger.disabled.active,
+#build .btn-danger[disabled].active,
+#components-parent .btn-danger[disabled].active,
+#build fieldset[disabled] .btn-danger.active,
+#components-parent fieldset[disabled] .btn-danger.active {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+#build .btn-success,
+#components-parent .btn-success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+#build .btn-success:hover,
+#components-parent .btn-success:hover,
+#build .btn-success:focus,
+#components-parent .btn-success:focus,
+#build .btn-success:active,
+#components-parent .btn-success:active,
+#build .btn-success.active,
+#components-parent .btn-success.active {
+  background-color: #4cae4c;
+  border-color: #449d44;
+}
+#build .btn-success.disabled,
+#components-parent .btn-success.disabled,
+#build .btn-success[disabled],
+#components-parent .btn-success[disabled],
+#build fieldset[disabled] .btn-success,
+#components-parent fieldset[disabled] .btn-success,
+#build .btn-success.disabled:hover,
+#components-parent .btn-success.disabled:hover,
+#build .btn-success[disabled]:hover,
+#components-parent .btn-success[disabled]:hover,
+#build fieldset[disabled] .btn-success:hover,
+#components-parent fieldset[disabled] .btn-success:hover,
+#build .btn-success.disabled:focus,
+#components-parent .btn-success.disabled:focus,
+#build .btn-success[disabled]:focus,
+#components-parent .btn-success[disabled]:focus,
+#build fieldset[disabled] .btn-success:focus,
+#components-parent fieldset[disabled] .btn-success:focus,
+#build .btn-success.disabled:active,
+#components-parent .btn-success.disabled:active,
+#build .btn-success[disabled]:active,
+#components-parent .btn-success[disabled]:active,
+#build fieldset[disabled] .btn-success:active,
+#components-parent fieldset[disabled] .btn-success:active,
+#build .btn-success.disabled.active,
+#components-parent .btn-success.disabled.active,
+#build .btn-success[disabled].active,
+#components-parent .btn-success[disabled].active,
+#build fieldset[disabled] .btn-success.active,
+#components-parent fieldset[disabled] .btn-success.active {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+#build .btn-info,
+#components-parent .btn-info {
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+#build .btn-info:hover,
+#components-parent .btn-info:hover,
+#build .btn-info:focus,
+#components-parent .btn-info:focus,
+#build .btn-info:active,
+#components-parent .btn-info:active,
+#build .btn-info.active,
+#components-parent .btn-info.active {
+  background-color: #46b8da;
+  border-color: #31b0d5;
+}
+#build .btn-info.disabled,
+#components-parent .btn-info.disabled,
+#build .btn-info[disabled],
+#components-parent .btn-info[disabled],
+#build fieldset[disabled] .btn-info,
+#components-parent fieldset[disabled] .btn-info,
+#build .btn-info.disabled:hover,
+#components-parent .btn-info.disabled:hover,
+#build .btn-info[disabled]:hover,
+#components-parent .btn-info[disabled]:hover,
+#build fieldset[disabled] .btn-info:hover,
+#components-parent fieldset[disabled] .btn-info:hover,
+#build .btn-info.disabled:focus,
+#components-parent .btn-info.disabled:focus,
+#build .btn-info[disabled]:focus,
+#components-parent .btn-info[disabled]:focus,
+#build fieldset[disabled] .btn-info:focus,
+#components-parent fieldset[disabled] .btn-info:focus,
+#build .btn-info.disabled:active,
+#components-parent .btn-info.disabled:active,
+#build .btn-info[disabled]:active,
+#components-parent .btn-info[disabled]:active,
+#build fieldset[disabled] .btn-info:active,
+#components-parent fieldset[disabled] .btn-info:active,
+#build .btn-info.disabled.active,
+#components-parent .btn-info.disabled.active,
+#build .btn-info[disabled].active,
+#components-parent .btn-info[disabled].active,
+#build fieldset[disabled] .btn-info.active,
+#components-parent fieldset[disabled] .btn-info.active {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+#build input[type="submit"].btn-block,
+#components-parent input[type="submit"].btn-block,
+#build input[type="button"].btn-block,
+#components-parent input[type="button"].btn-block {
+  width: 100%;
+}
+#build .form-horizontal .control-label,
+#components-parent .form-horizontal .control-label {
+  padding-top: 9px;
+}
+#build .form-horizontal .form-group:before,
+#components-parent .form-horizontal .form-group:before,
+#build .form-horizontal .form-group:after,
+#components-parent .form-horizontal .form-group:after {
+  display: table;
+  content: " ";
+}
+#build .form-horizontal .form-group:after,
+#components-parent .form-horizontal .form-group:after {
+  clear: both;
+}
+#build .form-horizontal .form-group:before,
+#components-parent .form-horizontal .form-group:before,
+#build .form-horizontal .form-group:after,
+#components-parent .form-horizontal .form-group:after {
+  display: table;
+  content: " ";
+}
+#build .form-horizontal .form-group:after,
+#components-parent .form-horizontal .form-group:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  #build .form-horizontal .form-group,
+  #components-parent .form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+#build .form-horizontal .form-group .row,
+#components-parent .form-horizontal .form-group .row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  #build .form-horizontal .control-label,
+  #components-parent .form-horizontal .control-label {
+    text-align: right;
+  }
+}
+#build .btn .caret,
+#components-parent .btn .caret {
+  border-top-color: #ffffff;
+}
+#build .btn .caret,
+#components-parent .btn .caret {
+  margin-left: 0;
+}
+#build .alert,
+#components-parent .alert {
+  padding: 10px 35px 10px 15px;
+  margin-bottom: 20px;
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+}
+#build .alert h4,
+#components-parent .alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+#build .alert hr,
+#components-parent .alert hr {
+  border-top-color: #f8e5be;
+}
+#build .alert .alert-link,
+#components-parent .alert .alert-link {
+  font-weight: 500;
+  color: #a47e3c;
+}
+#build .alert .close,
+#components-parent .alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+#build .alert-success,
+#components-parent .alert-success {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+#build .alert-success hr,
+#components-parent .alert-success hr {
+  border-top-color: #c9e2b3;
+}
+#build .alert-success .alert-link,
+#components-parent .alert-success .alert-link {
+  color: #356635;
+}
+#build .alert-danger,
+#components-parent .alert-danger {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+#build .alert-danger hr,
+#components-parent .alert-danger hr {
+  border-top-color: #e6c1c7;
+}
+#build .alert-danger .alert-link,
+#components-parent .alert-danger .alert-link {
+  color: #953b39;
+}
+#build .alert-info,
+#components-parent .alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+#build .alert-info hr,
+#components-parent .alert-info hr {
+  border-top-color: #a6e1ec;
+}
+#build .alert-info .alert-link,
+#components-parent .alert-info .alert-link {
+  color: #2d6987;
+}
+#build .alert-block,
+#components-parent .alert-block {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#build .alert-block > p,
+#components-parent .alert-block > p,
+#build .alert-block > ul,
+#components-parent .alert-block > ul {
+  margin-bottom: 0;
+}
+#build .alert-block p + p,
+#components-parent .alert-block p + p {
+  margin-top: 5px;
+}
+#build .tooltip,
+#components-parent .tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: visible;
+}
+#build .tooltip.in,
+#components-parent .tooltip.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+#build .tooltip.top,
+#components-parent .tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+#build .tooltip.right,
+#components-parent .tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+#build .tooltip.bottom,
+#components-parent .tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+#build .tooltip.left,
+#components-parent .tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+#build .tooltip-inner,
+#components-parent .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+}
+#build .tooltip-arrow,
+#components-parent .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+#build .tooltip.top .tooltip-arrow,
+#components-parent .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: #003466;
+  border-width: 5px 5px 0;
+}
+#build .tooltip.top-left .tooltip-arrow,
+#components-parent .tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  border-top-color: r #003466;
+  border-width: 5px 5px 0;
+}
+#build .tooltip.top-right .tooltip-arrow,
+#components-parent .tooltip.top-right .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  border-top-color: #003466;
+  border-width: 5px 5px 0;
+}
+#build .tooltip.right .tooltip-arrow,
+#components-parent .tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-right-color: #003466;
+  border-width: 5px 5px 5px 0;
+}
+#build .tooltip.left .tooltip-arrow,
+#components-parent .tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-left-color: #003466;
+  border-width: 5px 0 5px 5px;
+}
+#build .tooltip.bottom .tooltip-arrow,
+#components-parent .tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #003466;
+  border-width: 0 5px 5px;
+}
+#build .tooltip.bottom-left .tooltip-arrow,
+#components-parent .tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  border-bottom-color: #003466;
+  border-width: 0 5px 5px;
+}
+#build .tooltip.bottom-right .tooltip-arrow,
+#components-parent .tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  border-bottom-color: #003466;
+  border-width: 0 5px 5px;
+}
+#build .fade,
+#components-parent .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+#build .fade.in,
+#components-parent .fade.in {
+  opacity: 1;
+}
+#build h3,
+#components-parent h3 {
+  margin-top: 0px;
+}
+#build select,
+#components-parent select,
+#build textarea,
+#components-parent textarea,
+#build input,
+#components-parent input {
+  float: none;
+  max-width: none;
+  font-size: 12px !important;
+}
+#build div,
+#components-parent div {
+  margin-top: 0px !important;
+}
+#build li,
+#components-parent li {
+  margin: 0px;
+}
+#build ul,
+#components-parent ul {
+  list-style-type: none;
+  list-style: none;
+}
+#build p,
+#components-parent p {
+  margin: 0 0 5px;
+}
+#build p.header-sub,
+#components-parent p.header-sub {
+  margin-top: -10px;
+}
+#build .access-hide,
+#components-parent .access-hide {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  overflow: hidden;
+  height: 0px;
+  margin-bottom: 0px;
+}
+#build .form-horizontal .input-block,
+#components-parent .form-horizontal .input-block {
+  padding-left: 5px;
+  max-width: 470px;
+}
+#build .form-horizontal .btn-default,
+#components-parent .form-horizontal .btn-default {
+  background-color: #003466;
+  background-image: transparent !important;
+}
+#build .form-horizontal .btn,
+#components-parent .form-horizontal .btn {
+  background-image: transparent;
+  background-image: none !important;
+}
+#build .form-horizontal label.control-label,
+#components-parent .form-horizontal label.control-label {
+  max-width: 175px;
+}
+#build .form-horizontal #all-error-messages ul,
+#components-parent .form-horizontal #all-error-messages ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+#build .form-horizontal #all-error-messages a:hover,
+#components-parent .form-horizontal #all-error-messages a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+}
+#build .form-horizontal .checkbox,
+#components-parent .form-horizontal .checkbox,
+#build .form-horizontal .radio,
+#components-parent .form-horizontal .radio,
+#build .form-horizontal .radio-inline,
+#components-parent .form-horizontal .radio-inline,
+#build .form-horizontal .checkbox-inline,
+#components-parent .form-horizontal .checkbox-inline {
+  margin-top: 5px !important;
+  margin-right: 5px;
+}
+#build .form-horizontal label.radio-inline,
+#components-parent .form-horizontal label.radio-inline,
+#build .form-horizontal label.checkbox-inline,
+#components-parent .form-horizontal label.checkbox-inline {
+  line-height: 22px;
+}
+#build .form-horizontal .control-label,
+#components-parent .form-horizontal .control-label {
+  padding-right: 5px;
+  padding-top: 5px;
+}
+#build .form-horizontal label,
+#components-parent .form-horizontal label {
+  font-weight: normal;
+}
+#build .form-horizontal .form-control,
+#components-parent .form-horizontal .form-control {
+  height: 30px;
+  padding: 3px 6px;
+}
+#build .form-horizontal textarea.form-control,
+#components-parent .form-horizontal textarea.form-control {
+  height: 85px;
+}
+#build .form-horizontal input[type=submit],
+#components-parent .form-horizontal input[type=submit] {
+  margin-left: -10px;
+}
+#build .form-horizontal .help-block-styles,
+#components-parent .form-horizontal .help-block-styles {
+  font-size: .88em;
+  margin: 5px 0px 0px 0px !important;
+  padding: 0px 6px;
+}
+#build .form-horizontal .tooltip,
+#components-parent .form-horizontal .tooltip {
+  min-width: 200px;
+  height: 100%;
+  min-height: 75px;
+  top: 0px !important;
+}
+#build .form-horizontal .tooltip .tooltip-arrow,
+#components-parent .form-horizontal .tooltip .tooltip-arrow {
+  top: 8px;
+}
+#build .form-horizontal .tooltip .tooltip-inner,
+#components-parent .form-horizontal .tooltip .tooltip-inner {
+  background-color: #003466;
+}
+#build .form-horizontal .help-block,
+#components-parent .form-horizontal .help-block {
+  padding: 10px 35px 10px 15px;
+  margin-bottom: 20px;
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  font-size: .88em;
+  margin: 5px 0px 0px 0px !important;
+  padding: 0px 6px;
+}
+#build .form-horizontal .help-block ul,
+#components-parent .form-horizontal .help-block ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 3px;
+}
+#build .form-horizontal .help-block a:hover,
+#components-parent .form-horizontal .help-block a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+}
+#build .form-horizontal .form-group,
+#components-parent .form-horizontal .form-group {
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+#build .form-horizontal .form-group,
+#components-parent .form-horizontal .form-group,
+#build .form-horizontal h4,
+#components-parent .form-horizontal h4,
+#build .form-horizontal p,
+#components-parent .form-horizontal p {
+  clear: both;
+}
+#build .form-horizontal .form-group.error,
+#components-parent .form-horizontal .form-group.error {
+  border: none;
+  padding: 0px;
+}
+#build .form-horizontal .form-group.error .help-block,
+#components-parent .form-horizontal .form-group.error .help-block {
+  padding: 10px 35px 10px 15px;
+  margin-bottom: 20px;
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  font-size: .88em;
+  margin: 5px 0px 0px 0px !important;
+  padding: 0px 6px;
+}
+#build .form-horizontal .form-group.error .help-block ul,
+#components-parent .form-horizontal .form-group.error .help-block ul {
+  list-style: none;
+  list-style-type: none;
+  width: 100%;
+}
+#build .form-horizontal .form-group.error .help-block li,
+#components-parent .form-horizontal .form-group.error .help-block li {
+  padding: 0px;
+  margin: 0px;
+}
+#build .form-horizontal .form-group.warning .help-block,
+#components-parent .form-horizontal .form-group.warning .help-block {
+  padding: 10px 35px 10px 15px;
+  margin-bottom: 20px;
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+  font-size: .88em;
+  margin: 5px 0px 0px 0px !important;
+  padding: 0px 6px;
+}
+#build .form-horizontal .form-group.success .help-block,
+#components-parent .form-horizontal .form-group.success .help-block {
+  padding: 10px 35px 10px 15px;
+  margin-bottom: 20px;
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  font-size: .88em;
+  margin: 5px 0px 0px 0px !important;
+  padding: 0px 6px;
 }

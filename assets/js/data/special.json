@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Full Text Area",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "textarea"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Full Text Area"
+      },
+      "textarea": {
+        "label": "Starting Text",
+        "type": "textarea",
+        "value": "Full Width Text Area"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "This field is required"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Full Text Input",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "fullinput"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Full Text Input"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "Full Width Text Input"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "This field is required"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  }
+]

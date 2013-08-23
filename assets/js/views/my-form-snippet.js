@@ -7,6 +7,7 @@ define([
   SnippetView, TempSnippetView,
   PubSub
 ){
+  //this whole view is extended from the file views/snippet
   return SnippetView.extend({
     events:{
       "click"   : "preventPropagation" //stops checkbox / radio reacting.
@@ -23,8 +24,9 @@ define([
       this.$el.popover("show");
       $(".popover #save").on("click", this.saveHandler(that));
       $(".popover #cancel").on("click", this.cancelHandler(that));
+      
       //add drag event for all but form name
-      if(this.model.get("title") !== "Form Name"){
+      if(this.model.get("title") !== "Form Settings"){
         $("body").on("mousemove", function(mouseMoveEvent){
           if(
             Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 ||
