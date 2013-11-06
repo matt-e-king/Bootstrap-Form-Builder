@@ -38,7 +38,7 @@ define([
         , content: renderTab
       });
       new TabView({
-        title: "Rendered JSON"
+        title: "JSON"
         , content: jsonTab
       })
       /*new TabView({
@@ -54,11 +54,11 @@ define([
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
-      // Bootstrap "My Form" with 'Form Name' snippet.
-      new MyFormView({
-        title: "Original"
-        , collection: new MyFormSnippetsCollection(
-        [
+
+
+      var formView = new MyFormView({
+          title: "Original"
+          , collection: new MyFormSnippetsCollection( [
           { "title" : "Form Settings"
             , "build" : false
             , "render" : true
@@ -75,8 +75,28 @@ define([
               }
             }
           }
-        ])
+        ] )
       });
+
+
+      $('#loadJSON').on('click', function() {
+
+        var value = $("#jsonrender").val();
+
+        var json = $.parseJSON( value );
+
+        //console.log(json);
+
+        formView.collection = new MyFormSnippetsCollection( json );
+
+        formView.initialize();
+          
+
+      });
+
+
+      // Bootstrap "My Form" with 'Form Name' snippet.
+
     }
   }
 });

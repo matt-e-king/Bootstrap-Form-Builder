@@ -23,7 +23,6 @@ define([
       PubSub.on("tempDrop", this.handleTempDrop, this);
       this.$build = $("#build");
       this.renderForm = _.template(_renderForm);
-      this.renderJSON = _.template(_renderJSON);
       this.render();
     }
 
@@ -37,6 +36,9 @@ define([
       $("#render").html(that.renderForm({
         text: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
       }));
+
+      this.toJson();
+
       this.$el.appendTo("#build form");
       //this removes any HTML from the snippet with a class of .descriptor
       //$('#build form .descriptor').remove();
@@ -44,9 +46,8 @@ define([
     }
 
     , toJson: function() {
-        console.log(this.collection.toJSON());
         var jsonString = JSON.stringify(this.collection.toJSON());
-        $("#jsonrender").html(jsonString);
+        $("#jsonrender").val(jsonString);
     }
 
     , getBottomAbove: function(eventY){
