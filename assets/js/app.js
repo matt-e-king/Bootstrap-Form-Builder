@@ -3,13 +3,13 @@ define([
        , "collections/snippets" , "collections/my-form-snippets"
        , "views/tab" , "views/my-form"
        , "text!data/fields.json", "text!data/formatting.json","text!data/special.json","text!data/buttons.json"
-       , "text!templates/app/render.html",  "text!templates/app/about.html", 
+       , "text!templates/app/render.html",  "text!templates/app/about.html", "text!templates/app/renderjson.html",
 ], function(
   $, _, Backbone
   , SnippetsCollection, MyFormSnippetsCollection
   , TabView, MyFormView
   , fieldsJSON, formattingJSON, specialJSON, buttonsJSON
-  , renderTab, aboutTab
+  , renderTab, aboutTab, jsonTab
 ){
   return {
     //this is the initialize function which is triggered from the main.js file
@@ -37,6 +37,10 @@ define([
         title: "Rendered"
         , content: renderTab
       });
+      new TabView({
+        title: "JSON"
+        , content: jsonTab
+      })
       /*new TabView({
         title: "About"
         , content: aboutTab
@@ -50,11 +54,11 @@ define([
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
-      // Bootstrap "My Form" with 'Form Name' snippet.
-      new MyFormView({
-        title: "Original"
-        , collection: new MyFormSnippetsCollection(
-        [
+
+
+      var formView = new MyFormView({
+          title: "Original"
+          , collection: new MyFormSnippetsCollection( [
           { "title" : "Form Settings"
             , "build" : false
             , "render" : true
@@ -71,8 +75,28 @@ define([
               }
             }
           }
-        ])
+        ] )
       });
+
+
+      $('#loadJSON').on('click', function() {
+
+        var value = $("#jsonrender").val();
+
+        var json = $.parseJSON( value );
+
+        //console.log(json);
+
+        formView.collection = new MyFormSnippetsCollection( json );
+
+        formView.initialize();
+          
+
+      });
+
+
+      // Bootstrap "My Form" with 'Form Name' snippet.
+
     }
   }
 });

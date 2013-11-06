@@ -33,6 +33,17 @@ input {
   cursor: pointer;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
 textarea {
   resize: vertical;
 }
@@ -129,6 +140,9 @@ form .popover form {
   border: 1px solid #ccc;
 }
 
+#jsonrender {
+  min-height:500px;
+}
 
 
 
@@ -198,6 +212,7 @@ form .popover form {
       .btn {
         background-image:transparent;
         background-image:none !important;
+        text-shadow:none;
       }
 
       label.control-label {

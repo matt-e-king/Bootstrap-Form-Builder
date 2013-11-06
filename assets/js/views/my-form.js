@@ -2,12 +2,12 @@ define([
        "jquery", "underscore", "backbone"
       , "views/temp-snippet"
       , "helper/pubsub"
-      , "text!templates/app/renderform.html"
+      , "text!templates/app/renderform.html", "text!templates/app/renderjson.html"
 ], function(
   $, _, Backbone
   , TempSnippetView
   , PubSub
-  , _renderForm
+  , _renderForm, _renderJSON
 ){
   return Backbone.View.extend({
     tagName: "fieldset"
@@ -15,6 +15,9 @@ define([
       this.collection.on("add", this.render, this);
       this.collection.on("remove", this.render, this);
       this.collection.on("change", this.render, this);
+      this.collection.on("add", this.toJson, this);
+      this.collection.on("remove", this.toJson, this);
+      this.collection.on("change", this.toJson, this);
       PubSub.on("mySnippetDrag", this.handleSnippetDrag, this);
       PubSub.on("tempMove", this.handleTempMove, this);
       PubSub.on("tempDrop", this.handleTempDrop, this);
@@ -33,10 +36,18 @@ define([
       $("#render").html(that.renderForm({
         text: _.map(this.collection.renderAllRendered(), function(e){return e.html()}).join("\n")
       }));
+
+      this.toJson();
+
       this.$el.appendTo("#build form");
       //this removes any HTML from the snippet with a class of .descriptor
       //$('#build form .descriptor').remove();
       this.delegateEvents();
+    }
+
+    , toJson: function() {
+        var jsonString = JSON.stringify(this.collection.toJSON());
+        $("#jsonrender").val(jsonString);
     }
 
     , getBottomAbove: function(eventY){
