@@ -121,6 +121,9 @@ form .popover form {
 #target {
   border: 1px solid #ccc;
 }
+#jsonrender {
+  min-height: 500px;
+}
 #build,
 #components-parent {
   /*width:470px;*/
@@ -1634,6 +1637,7 @@ form .popover form {
 #components-parent .form-horizontal .btn {
   background-image: transparent;
   background-image: none !important;
+  text-shadow: none;
 }
 #build .form-horizontal label.control-label,
 #components-parent .form-horizontal label.control-label {
