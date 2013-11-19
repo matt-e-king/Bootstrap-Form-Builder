@@ -70,6 +70,41 @@
     }
   },
   {
+    "title": "Phone",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "phone"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Phone"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "(###) ###-####"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Phone field is required"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
     "title": "Text Area",
     "fields": {
       "id": {

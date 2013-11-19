@@ -21,6 +21,9 @@ define([
       var that = this;
       //popover
       $(".popover").remove();
+      this.$el.popover({
+        placement: 'left'
+      });
       this.$el.popover("show");
       $(".popover #save").on("click", this.saveHandler(that));
       $(".popover #cancel").on("click", this.cancelHandler(that));

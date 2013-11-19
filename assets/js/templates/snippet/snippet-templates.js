@@ -18,7 +18,8 @@ define(function(require) {
   , fulltextarea             = require('text!templates/snippet/fulltextarea.html')
   , fulltextinput             = require('text!templates/snippet/fulltextinput.html')
   , textarea                 = require('text!templates/snippet/textarea.html')
-  , textinput                = require('text!templates/snippet/textinput.html');
+  , textinput                = require('text!templates/snippet/textinput.html')
+  , phone                     = require('text!templates/snippet/phone.html');
 
   return {
     formsettings               : formsettings
@@ -41,5 +42,6 @@ define(function(require) {
     , fulltextinput             : fulltextinput
     , textarea                 : textarea
     , textinput                : textinput
+    , phone                     : phone
   }
 });

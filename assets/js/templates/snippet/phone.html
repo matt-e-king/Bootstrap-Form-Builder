@@ -1,0 +1,6 @@
+<div class="form-group" <% if(helptext != "") { %>data-toggle="tooltip"<% } %>>
+	<label for="<%= id %>" class="col-lg-4 control-label"><%= label %></label>
+	<div class="col-lg-8 input-block">
+		<input type="text" name="<%= id %>" class="form-control" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<% if(helptext != "") {%><%= helptext %><% } else { %><%= label %><% } %>" placeholder="<%= placeholder %>" data-validation-regex-message="Phone number does appear valid, please use this format (###) ###-####" data-validation-regex-regex="^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$"<% if(required) {%> required="required" data-validation-required-message="<%= requiredmessage %>" <% } %>/>
+	</div>
+</div>
