@@ -46,15 +46,15 @@ define([
         , content: aboutTab
       });*/
 
-      $('#drag-drop-components').affix({
+      $('#drag-drop-components section').affix({
         offset: {
-          top: 125
+          top: 80
         }
       });
+
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
-
 
       var formView = new MyFormView({
           title: "Original"
