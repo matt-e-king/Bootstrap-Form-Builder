@@ -1,0 +1,19 @@
+<div class="form-group">
+	<label for="<%= name %>" class="control-label sr-only">
+		<%= label %>
+	</label>
+	<div class="full input-block">
+		
+		<% _.each(checkboxes, function(checkbox, i){ %>
+
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" name="<%= name+'-'+i %>" id="<%= name+'-'+i %>" value="on" ektdesignns_caption="<%= label %> - <%= checkbox %>" ektdesignns_name="<%= name+'-'+i %>" title="<%= label %> - <%= checkbox %>" ektdesignns_nodetype="element" />
+				<%= checkbox %>
+			</label>
+		</div>
+
+		<% }); %>
+		
+	</div>
+</div>

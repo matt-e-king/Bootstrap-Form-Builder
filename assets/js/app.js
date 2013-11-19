@@ -79,13 +79,17 @@ define([
       });
 
 
-      $('#loadJSON').on('click', function() {
+      $('#loadJSON').on('click', function(e) {
+
+        e.preventDefault();
 
         var value = $("#jsonrender").val();
 
         var json = $.parseJSON( value );
 
         //console.log(json);
+
+        //formView.collection.off("change");
 
         formView.collection = new MyFormSnippetsCollection( json );
 

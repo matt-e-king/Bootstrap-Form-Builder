@@ -18,9 +18,15 @@ define([
       this.collection.on("add", this.toJson, this);
       this.collection.on("remove", this.toJson, this);
       this.collection.on("change", this.toJson, this);
+
+      PubSub.off("mySnippetDrag");
+      PubSub.off("tempMove");
+      PubSub.off("tempDrop");
+
       PubSub.on("mySnippetDrag", this.handleSnippetDrag, this);
       PubSub.on("tempMove", this.handleTempMove, this);
       PubSub.on("tempDrop", this.handleTempDrop, this);
+
       this.$build = $("#build");
       this.renderForm = _.template(_renderForm);
       this.render();
