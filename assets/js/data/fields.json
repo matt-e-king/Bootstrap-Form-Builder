@@ -85,7 +85,7 @@
       "placeholder": {
         "label": "Placeholder",
         "type": "input",
-        "value": "(###) ###-####"
+        "value": "###-###-####"
       },
       "helptext": {
         "label": "Help Text",
