@@ -14,9 +14,16 @@ body {
   min-height: 500px;
 }
 
-#drag-drop-components.affix {
-  top:60px;
-  left:745px;
+#components-parent {
+  overflow:hidden;
+}
+
+#drag-drop-components section.affix {
+ top:60px;
+}
+
+#drag-drop-components section {
+  width:570px;
 }
 
 #target fieldset {
@@ -303,6 +310,7 @@ form .popover form {
       .form-group {
         margin-bottom:10px;
         margin-left:0px;
+        margin-right:0px;
       }
 
       .form-group,h4,p {

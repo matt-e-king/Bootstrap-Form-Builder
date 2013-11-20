@@ -46,15 +46,15 @@ define([
         , content: aboutTab
       });*/
 
-      $('#drag-drop-components').affix({
+      $('#drag-drop-components section').affix({
         offset: {
-          top: 125
+          top: 80
         }
       });
+
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
-
 
       var formView = new MyFormView({
           title: "Original"
@@ -79,13 +79,17 @@ define([
       });
 
 
-      $('#loadJSON').on('click', function() {
+      $('#loadJSON').on('click', function(e) {
+
+        e.preventDefault();
 
         var value = $("#jsonrender").val();
 
         var json = $.parseJSON( value );
 
         //console.log(json);
+
+        //formView.collection.off("change");
 
         formView.collection = new MyFormSnippetsCollection( json );
 

@@ -68,5 +68,150 @@
         "value": false
       }
     }
+  },
+  {
+    "title": "Full Multiple Checkboxes",
+    "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "checkboxes"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Multiple Checkboxes"
+      },
+      "checkboxes": {
+        "label": "Checkboxes",
+        "type": "textarea-split",
+        "value": [
+          "Left aligned, full width, horizontal checkboxes"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Full Multiple Radios",
+    "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "radios"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Multiple Radios"
+      },
+      "radios": {
+        "label": "Radios",
+        "type": "textarea-split",
+        "value": [
+          "Left aligned, full width, horizontal radios"
+        ]
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "e.g Please select a favorite food"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Select State",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "selectstate"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "State"
+      },
+      "defaultoption": {
+        "label": "Default Option",
+        "type": "input",
+        "value": "-- Please select a state --"
+      },
+      "options": {
+        "label": "Options",
+        "type": "textarea-split",
+        "value": [
+          "Alaska",
+          "Alabama",
+          "Arizona",
+          "Arkansas",
+          "California",
+          "Colorado",
+          "Connecticut",
+          "Delaware",
+          "Florida",
+          "Georgia",
+          "Hawaii",
+          "Idaho",
+          "Illinois",
+          "Indiana",
+          "Iowa",
+          "Kansas",
+          "Kentucky",
+          "Louisiana",
+          "Maine",
+          "Maryland",
+          "Massachusetts",
+          "Michigan",
+          "Minnesota",
+          "Mississippi",
+          "Missouri",
+          "Montana",
+          "Nebraska",
+          "Nevada",
+          "New Hampshire",
+          "New Jersey",
+          "New Mexico",
+          "New York",
+          "North Carolina",
+          "North Dakota",
+          "Ohio",
+          "Oklahoma",
+          "Oregon",
+          "Pennsylvania",
+          "Rhode Island",
+          "South Carolina",
+          "South Dakota",
+          "Tennessee",
+          "Texas",
+          "Utah",
+          "Vermont",
+          "Virginia",
+          "Washington",
+          "West Virginia",
+          "Wisconsin",
+          "Wyoming"
+        ]
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "Please select a state"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      }
+    }
   }
 ]
