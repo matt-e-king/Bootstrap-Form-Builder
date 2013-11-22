@@ -105,6 +105,41 @@
     }
   },
   {
+    "title": "Number input",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "numberInput"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Number"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": ""
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "This field is Required"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
     "title": "Text Area",
     "fields": {
       "id": {
