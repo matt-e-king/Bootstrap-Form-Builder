@@ -1,6 +1,7 @@
 <div class="form-group">
   <label for="<%= name %>" class="col-lg-4 control-label">
-    <% if(hidelabel) { %><span class="sr-only"><% } %><%= label %><% if(hidelabel) { %></span><% } %>
+    <% if(hidelabel) { %><% } %>
+    <% if(!hidelabel) { %><%= label %><% } %>
   </label>
   <div class="col-lg-8 input-block">
 
