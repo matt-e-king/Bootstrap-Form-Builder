@@ -1,6 +1,7 @@
 //this is the configuration of require.js
 require.config({
   baseUrl: "assets/js/lib/"
+  , urlArgs: "bust=" +  (new Date()).getTime()
   , shim: {
     'backbone': {
       deps: ['underscore', 'jquery'],
