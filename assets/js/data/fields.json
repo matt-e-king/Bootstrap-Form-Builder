@@ -231,6 +231,11 @@
         "type": "input",
         "value": "Date"
       },
+      "dateoptions": {
+        "label": "Date Options",
+        "type":"textarea",
+        "value":""
+      },
       "placeholder": {
         "label": "Placeholder",
         "type": "input",

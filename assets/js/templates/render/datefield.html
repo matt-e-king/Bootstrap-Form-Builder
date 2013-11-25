@@ -1,7 +1,11 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-    $( '#<%= id %>' ).datepicker();
+    $( '#<%= id %>' ).datepicker(
+    {
+    	<%= dateoptions %>
+    }
+    );
  });
 
 </script>
