@@ -13,14 +13,14 @@ body {
 #components {
   min-height: 500px;
 }
-#components-parent {
-  overflow: hidden;
-}
 #drag-drop-components section.affix {
   top: 60px;
 }
 #drag-drop-components section {
   width: 570px;
+}
+#target {
+  min-height: 600px;
 }
 #target fieldset {
   min-height: 200px;

@@ -46,11 +46,11 @@ define([
         , content: aboutTab
       });*/
 
-      $('#drag-drop-components section').affix({
-        offset: {
-          top: 80
-        }
-      });
+      // $('#drag-drop-components section').affix({
+      //   offset: {
+      //     top: 80
+      //   }
+      // });
 
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
