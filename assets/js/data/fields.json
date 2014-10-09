@@ -70,6 +70,41 @@
     }
   },
   {
+    "title": "File Uploader",
+    "fields": {
+      "id": {
+        "label": "ID / Name (unique)",
+        "type": "input",
+        "value": "textInput"
+      },
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Upload File"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "Placeholder"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": ""
+      },
+      "requiredmessage": {
+        "label": "Required Message",
+        "type": "input",
+        "value": "This field is Required"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
     "title": "Phone",
     "fields": {
       "id": {

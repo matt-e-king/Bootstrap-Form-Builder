@@ -1,0 +1,6 @@
+<div class="form-group" <% if(helptext != "") { %>data-toggle="tooltip"<% } %>>
+	<label for="<%= id %>" class="col-lg-4 control-label"><%= label %></label>
+	<div class="col-lg-8 input-block">
+		<input type="file" name="<%= id %>" class="form-control" ektdesignns_nodetype="element" id="<%= id %>" ektdesignns_caption="<%= label %>" ektdesignns_name="<%= id %>" title="<% if(helptext != "") {%><%= helptext %><% } else { %><%= label %><% } %>" placeholder="<%= placeholder %>" <% if(required) {%>required="required" data-validation-required-message="<%= requiredmessage %>" <% } %> data-validation-regex-regex=".+(\.(jpg|doc|docx|ppt|pptx|PDF|JPG|DOC|DOCX|PPT|PPTX|PDF))$" data-validation-regex-message="We only accept the following file formats: doc, docx, ppt, pptx, pdf"/>
+	</div>
+</div>

@@ -2,6 +2,7 @@ define(function(require) {
   var formsettings            = require('text!templates/snippet/formsettings.html')
   , javascript                = require('text!templates/snippet/javascript.html')
   , textinput                 = require('text!templates/snippet/textinput.html')
+  , fileuploader              = require('text!templates/snippet/fileuploader.html')
   , numberinput               = require('text!templates/snippet/numberinput.html')
   , button                    = require('text!templates/snippet/button.html')
   , datefield                 = require('text!templates/snippet/datefield.html')
@@ -29,6 +30,7 @@ define(function(require) {
     formsettings                  : formsettings
     , javascript                  : javascript
     , textinput                   : textinput
+    , fileuploader                : fileuploader
     , numberinput                 : numberinput
     , singlebutton                : button
     , datefield                   : datefield
