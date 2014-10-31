@@ -5,4 +5,11 @@
 <% } %>
 
 <input type="text" id="focus" class="sr-only"/>
+<div class="form-group sr-only">
+  <label for="human" class="control-label">Leave blank if you are human</label>
+  <div class="input-block">
+    <input type="text" name="human" class="form-control" id="human" title="First Name" data-validation-regex-regex="/^&amp;/" data-validation-regex-message="This field must be empty" tabindex="-1" />
+    <div class="help-block" style="display:none;"></div>
+  </div>
+</div>
 <div id="all-error-messages" class="sr-only alert alert-danger"></div>
